@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Helmet } from "react-helmet-async";
-import { ArrowRight, Check, ChevronDown, Menu, MessageCircle, X } from "lucide-react";
+import { ArrowRight, Check, ChevronDown, Mail, MapPin, Menu, MessageCircle, X } from "lucide-react";
 import { useState, type ReactNode } from "react";
 import ContactForm from "../components/ContactForm";
 
@@ -406,26 +406,129 @@ function HowItWorks() {
 function Contact() {
   return (
     <section id="contact" className="py-20 md:py-28" style={{ background: CREAM }}>
-      <div className="mx-auto grid max-w-7xl gap-12 px-5 md:px-8 lg:grid-cols-[.8fr_1.2fr] lg:items-center">
-        <div>
-          <Eyebrow>Start a conversation</Eyebrow>
-          <SectionTitle>Tell us what you need from Bengaluru property.</SectionTitle>
-          <p className="mt-5 leading-relaxed" style={{ color: MUTED }}>
-            Share the basics and we’ll help you identify the right next step. No listings
-            catalogue—just a practical conversation about your requirement.
-          </p>
-          <a
-            href={MAPS}
-            target="_blank"
-            rel="noreferrer"
-            className="mt-7 inline-flex items-center gap-2 text-sm font-semibold"
-            style={{ color: NAVY }}
-          >
-            View our Google Business Profile <ArrowRight size={16} />
-          </a>
+      <div className="mx-auto max-w-7xl px-5 md:px-8">
+        <div className="grid gap-10 lg:grid-cols-[.9fr_1.1fr] lg:items-start">
+          <div>
+            <Eyebrow>Start a conversation</Eyebrow>
+            <SectionTitle>Tell us what you need from Bengaluru property.</SectionTitle>
+            <p className="mt-5 max-w-xl leading-relaxed" style={{ color: MUTED }}>
+              Share the basics and we’ll help you identify the right next step. No listings
+              catalogue—just a practical conversation about your requirement.
+            </p>
+            <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
+              <a
+                href={WHATSAPP}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-4 rounded-xl bg-white p-4 shadow-sm transition hover:-translate-y-0.5"
+              >
+                <span
+                  className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full"
+                  style={{ background: "#e9f7ee", color: "#176b3a" }}
+                >
+                  <MessageCircle size={20} />
+                </span>
+                <span>
+                  <span
+                    className="block text-xs font-semibold uppercase tracking-wider"
+                    style={{ color: MUTED }}
+                  >
+                    WhatsApp
+                  </span>
+                  <span className="mt-1 block font-semibold" style={{ color: NAVY }}>
+                    Start an enquiry
+                  </span>
+                </span>
+              </a>
+              <a
+                href="mailto:info@easyfindprops.com"
+                className="flex items-center gap-4 rounded-xl bg-white p-4 shadow-sm transition hover:-translate-y-0.5"
+              >
+                <span
+                  className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full"
+                  style={{ background: "#eef3f8", color: NAVY }}
+                >
+                  <Mail size={20} />
+                </span>
+                <span>
+                  <span
+                    className="block text-xs font-semibold uppercase tracking-wider"
+                    style={{ color: MUTED }}
+                  >
+                    Email
+                  </span>
+                  <span className="mt-1 block font-semibold" style={{ color: NAVY }}>
+                    info@easyfindprops.com
+                  </span>
+                </span>
+              </a>
+            </div>
+            <div
+              className="mt-8 flex items-start gap-4 rounded-xl border bg-white/60 p-5"
+              style={{ borderColor: "#e4e8ed" }}
+            >
+              <MapPin className="mt-0.5 shrink-0" style={{ color: GOLD }} size={22} />
+              <div>
+                <p
+                  className="text-xs font-semibold uppercase tracking-wider"
+                  style={{ color: MUTED }}
+                >
+                  Find EasyFind
+                </p>
+                <p className="mt-2 leading-relaxed" style={{ color: INK }}>
+                  Koramangala, Bengaluru, Karnataka
+                </p>
+                <a
+                  href={MAPS}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-3 inline-flex items-center gap-2 text-sm font-semibold"
+                  style={{ color: NAVY }}
+                >
+                  View Google Business Profile <ArrowRight size={15} />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="rounded-2xl bg-white p-2 shadow-xl">
+            <ContactForm onPrivacyClick={() => undefined} />
+          </div>
         </div>
-        <div className="rounded-2xl bg-white p-2 shadow-xl">
-          <ContactForm onPrivacyClick={() => undefined} />
+        <div
+          className="mt-12 overflow-hidden rounded-2xl border bg-white shadow-lg"
+          style={{ borderColor: "#e4e8ed" }}
+        >
+          <div
+            className="flex flex-col justify-between gap-3 border-b px-6 py-5 sm:flex-row sm:items-center"
+            style={{ borderColor: "#e4e8ed" }}
+          >
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-wider" style={{ color: GOLD }}>
+                Our local presence
+              </p>
+              <h3 className="mt-1 font-serif text-2xl font-semibold" style={{ color: NAVY }}>
+                Find us in Bengaluru
+              </h3>
+            </div>
+            <a
+              href={MAPS}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 text-sm font-semibold"
+              style={{ color: NAVY }}
+            >
+              Open in Google Maps <ArrowRight size={15} />
+            </a>
+          </div>
+          <iframe
+            title="EasyFind Property Solutions on Google Maps"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.4847368668495!2d77.62215847587636!3d12.94079861555562!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae15229e6c1a61%3A0x26a05f018e301661!2sEasyFind%20Property%20Solutions!5e0!3m2!1sen!2sin!4v1710321234567!5m2!1sen!2sin"
+            width="100%"
+            height="320"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+          />
         </div>
       </div>
     </section>
@@ -434,8 +537,8 @@ function Contact() {
 
 function Footer() {
   return (
-    <footer className="bg-white py-12">
-      <div className="mx-auto flex max-w-7xl flex-col gap-8 px-5 md:px-8">
+    <footer className="bg-white py-10">
+      <div className="mx-auto max-w-7xl px-5 md:px-8">
         <div className="flex flex-col justify-between gap-6 sm:flex-row sm:items-center">
           <Logo />
           <a
@@ -449,12 +552,15 @@ function Footer() {
           </a>
         </div>
         <div
-          className="flex flex-col justify-between gap-4 border-t pt-6 text-sm sm:flex-row"
+          className="mt-8 flex flex-col justify-between gap-4 border-t pt-6 text-sm sm:flex-row"
           style={{ borderColor: "#e4e8ed", color: MUTED }}
         >
           <span>© {new Date().getFullYear()} EasyFind Property Solutions</span>
           <span>Find a property · Rent out · Manage · Prepare and care</span>
         </div>
+        <p className="mt-4 text-xs" style={{ color: MUTED }}>
+          Customer-facing brand of EASYFIND REALTY SOLUTIONS PRIVATE LIMITED.
+        </p>
       </div>
     </footer>
   );
