@@ -191,8 +191,8 @@ function Hero() {
           backgroundSize: "34px 34px",
         }}
       />
-      <div className="relative mx-auto grid max-w-7xl items-center gap-14 px-5 pb-20 md:px-8 lg:grid-cols-[1.1fr_.9fr] lg:pb-28">
-        <div className="max-w-2xl">
+      <div className="relative mx-auto grid max-w-7xl items-start gap-12 px-5 pb-20 md:px-8 lg:grid-cols-2 lg:gap-16 lg:pb-28">
+        <div className="mx-auto max-w-2xl text-center lg:mx-0 lg:pt-10 lg:text-left">
           <Eyebrow light>EasyFind Property Solutions</Eyebrow>
           <h1 className="font-serif text-5xl font-semibold leading-[1.04] tracking-tight text-white sm:text-6xl">
             Your On-Ground
@@ -205,7 +205,7 @@ function Hero() {
             We help people find homes in Bengaluru and help property owners manage what
             matters—locally, clearly, and with practical support.
           </p>
-          <div className="mt-9 flex flex-wrap gap-3">
+          <div className="mt-9 flex flex-wrap justify-center gap-3 lg:justify-start">
             <button
               onClick={() => scrollTo("#services")}
               className="rounded-full px-6 py-3.5 font-semibold"
@@ -221,7 +221,7 @@ function Hero() {
             </button>
           </div>
         </div>
-        <div className="rounded-2xl bg-white p-2 shadow-2xl">
+        <div className="mx-auto w-full max-w-[440px] rounded-2xl bg-white p-2 shadow-2xl lg:mx-0 lg:justify-self-end">
           <ContactForm onPrivacyClick={() => undefined} />
         </div>
       </div>
@@ -446,7 +446,7 @@ function Contact() {
   return (
     <section id="contact" className="py-20 md:py-28" style={{ background: CREAM }}>
       <div className="mx-auto max-w-7xl px-5 md:px-8">
-        <div className="grid gap-10 lg:grid-cols-[.9fr_1.1fr] lg:items-start">
+        <div className="grid gap-10 lg:grid-cols-2 lg:items-start lg:gap-16">
           <div>
             <Eyebrow>Start a conversation</Eyebrow>
             <SectionTitle>Tell us what you need from Bengaluru property.</SectionTitle>
@@ -529,7 +529,7 @@ function Contact() {
               </div>
             </div>
           </div>
-          <div className="rounded-2xl bg-white p-2 shadow-xl">
+          <div className="mx-auto w-full max-w-[440px] rounded-2xl bg-white p-2 shadow-xl lg:mx-0 lg:justify-self-end">
             <ContactForm onPrivacyClick={() => undefined} />
           </div>
         </div>
