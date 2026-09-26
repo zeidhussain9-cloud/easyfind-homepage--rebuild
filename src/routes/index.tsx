@@ -356,6 +356,45 @@ function Areas() {
   );
 }
 
+function Reviews() {
+  const reviews = [
+    ["Very helpful and professional.", "Rishabh Kejariwal"],
+    ["Prompt service.", "Kirit"],
+    ["Professional and dependable.", "Shameer Ayyappan"],
+  ];
+  return (
+    <section className="py-20 md:py-28" style={{ background: "#fff" }}>
+      <div className="mx-auto max-w-7xl px-5 md:px-8">
+        <Eyebrow>What clients say</Eyebrow>
+        <SectionTitle>Local help, noticed by the people who use it.</SectionTitle>
+        <div className="mt-10 grid gap-4 md:grid-cols-3">
+          {reviews.map(([quote, name]) => (
+            <blockquote key={name} className="border p-6" style={{ borderColor: "#e4e8ed" }}>
+              <p className="font-serif text-2xl leading-tight" style={{ color: NAVY }}>
+                “{quote}”
+              </p>
+              <footer className="mt-7 text-xs leading-relaxed" style={{ color: MUTED }}>
+                — {name}
+                <br />
+                Google Business Profile
+              </footer>
+            </blockquote>
+          ))}
+        </div>
+        <a
+          href={MAPS}
+          target="_blank"
+          rel="noreferrer"
+          className="mt-7 inline-flex items-center gap-2 text-sm font-semibold"
+          style={{ color: NAVY }}
+        >
+          Read more on Google <ArrowRight size={15} />
+        </a>
+      </div>
+    </section>
+  );
+}
+
 function HowItWorks() {
   return (
     <section id="how-it-works" className="py-20 md:py-28">
@@ -495,7 +534,7 @@ function Contact() {
           </div>
         </div>
         <div
-          className="mt-12 overflow-hidden rounded-2xl border bg-white shadow-lg"
+          className="mt-10 overflow-hidden rounded-2xl border bg-white shadow-lg"
           style={{ borderColor: "#e4e8ed" }}
         >
           <div
@@ -524,7 +563,7 @@ function Contact() {
             title="EasyFind Property Solutions on Google Maps"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.4847368668495!2d77.62215847587636!3d12.94079861555562!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae15229e6c1a61%3A0x26a05f018e301661!2sEasyFind%20Property%20Solutions!5e0!3m2!1sen!2sin!4v1710321234567!5m2!1sen!2sin"
             width="100%"
-            height="320"
+            height="240"
             style={{ border: 0 }}
             allowFullScreen
             loading="lazy"
@@ -583,6 +622,7 @@ function Index() {
         <Services />
         <OwnerPromise />
         <Areas />
+        <Reviews />
         <HowItWorks />
         <Contact />
       </main>
