@@ -221,8 +221,30 @@ function Hero() {
             </button>
           </div>
         </div>
-        <div className="mx-auto w-full max-w-[440px] rounded-2xl bg-white p-2 shadow-2xl lg:mx-0 lg:mt-8 lg:justify-self-end">
-          <ContactForm onPrivacyClick={() => undefined} />
+        <div className="mx-auto w-full max-w-[440px] rounded-2xl border border-white/15 bg-white/10 p-7 shadow-2xl backdrop-blur-sm lg:mx-0 lg:mt-8 lg:justify-self-end">
+          <Eyebrow light>One clear next step</Eyebrow>
+          <h2 className="font-serif text-3xl font-semibold leading-tight text-white">
+            Tell us what your property needs.
+          </h2>
+          <p className="mt-4 leading-relaxed text-white/70">
+            Share the situation once and we’ll help you choose the right local route.
+          </p>
+          <div className="mt-7 space-y-3">
+            {routes.map((route) => (
+              <button
+                key={route.number}
+                type="button"
+                onClick={() => scrollTo("#contact")}
+                className="flex w-full items-center justify-between rounded-xl border border-white/15 bg-white/10 px-4 py-3 text-left transition hover:bg-white/15"
+              >
+                <span className="flex items-center gap-3 text-sm font-semibold text-white">
+                  <span style={{ color: "#e3c976" }}>{route.number}</span>
+                  {route.title}
+                </span>
+                <ArrowRight size={16} className="text-white/70" />
+              </button>
+            ))}
+          </div>
         </div>
       </div>
     </section>
@@ -243,9 +265,11 @@ function Services() {
         </div>
         <div className="mt-12 grid gap-4 md:grid-cols-2">
           {routes.map((r) => (
-            <article
+            <button
+              type="button"
+              onClick={() => scrollTo("#contact")}
               key={r.number}
-              className="group rounded-2xl border p-7 transition hover:-translate-y-1 hover:shadow-xl"
+              className="group rounded-2xl border p-7 text-left transition hover:-translate-y-1 hover:shadow-xl"
               style={{ borderColor: "#e4e8ed" }}
             >
               <div className="flex items-start justify-between">
@@ -263,7 +287,7 @@ function Services() {
               <p className="mt-3 leading-relaxed" style={{ color: MUTED }}>
                 {r.text}
               </p>
-            </article>
+            </button>
           ))}
         </div>
       </div>
@@ -559,7 +583,7 @@ function Contact() {
             </div>
           </div>
           <div className="mx-auto w-full max-w-[440px] rounded-2xl bg-white p-2 shadow-xl lg:mx-0 lg:justify-self-end">
-            <ContactForm onPrivacyClick={() => undefined} />
+            <ContactForm onPrivacyClick={() => scrollTo("#privacy")} />
           </div>
         </div>
         <div
@@ -629,6 +653,14 @@ function Footer() {
         <p className="mt-4 text-xs" style={{ color: MUTED }}>
           Customer-facing brand of EASYFIND REALTY SOLUTIONS PRIVATE LIMITED.
         </p>
+        <div id="privacy" className="mt-8 border-t pt-6" style={{ borderColor: "#e4e8ed" }}>
+          <h2 className="text-sm font-semibold" style={{ color: NAVY }}>Privacy Policy</h2>
+          <p className="mt-2 max-w-3xl text-xs leading-relaxed" style={{ color: MUTED }}>
+            We use the details you submit to respond to your property enquiry and coordinate the
+            next step you request. We do not publish your details as listings or sell them to third
+            parties. To ask about, update, or remove your enquiry data, email info@easyfindprops.com.
+          </p>
+        </div>
       </div>
     </footer>
   );
