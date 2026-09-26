@@ -72,13 +72,13 @@ function Logo({ light = false }: { light?: boolean }) {
       aria-label="EasyFind home"
     >
       <span
-        className="overflow-hidden rounded-lg"
-        style={{ background: light ? "white" : "transparent", padding: light ? "5px 9px" : 0 }}
+        className="flex h-10 w-[7.5rem] items-center overflow-hidden rounded-lg"
+        style={{ background: light ? "white" : "transparent", padding: light ? "4px 8px" : 0 }}
       >
         <img
           src="/easyfind-logo.jpg"
           alt="EasyFind Property Solutions"
-          style={{ height: light ? 44 : 48, width: "auto", display: "block" }}
+          className="h-full w-full object-contain"
         />
       </span>
     </a>
@@ -191,8 +191,8 @@ function Hero() {
           backgroundSize: "34px 34px",
         }}
       />
-      <div className="relative mx-auto grid max-w-7xl items-start gap-12 px-5 pb-20 md:px-8 lg:grid-cols-2 lg:gap-16 lg:pb-28">
-        <div className="mx-auto max-w-2xl text-center lg:mx-0 lg:pt-10 lg:text-left">
+      <div className="relative mx-auto grid max-w-7xl items-start gap-10 px-5 pb-20 md:px-8 lg:grid-cols-[1.05fr_.95fr] lg:gap-16 lg:pb-28">
+        <div className="max-w-2xl pt-2 text-center lg:pt-12 lg:text-left">
           <Eyebrow light>EasyFind Property Solutions</Eyebrow>
           <h1 className="font-serif text-5xl font-semibold leading-[1.04] tracking-tight text-white sm:text-6xl">
             Your On-Ground
@@ -201,7 +201,7 @@ function Hero() {
             <br />
             in Bengaluru.
           </h1>
-          <p className="mt-7 max-w-xl text-lg leading-relaxed text-white/75">
+          <p className="mx-auto mt-7 max-w-xl text-lg leading-relaxed text-white/75 lg:mx-0">
             We help people find homes in Bengaluru and help property owners manage what
             matters—locally, clearly, and with practical support.
           </p>
@@ -221,7 +221,7 @@ function Hero() {
             </button>
           </div>
         </div>
-        <div className="mx-auto w-full max-w-[440px] rounded-2xl bg-white p-2 shadow-2xl lg:mx-0 lg:justify-self-end">
+        <div className="w-full rounded-2xl bg-white p-2 shadow-2xl lg:mt-8">
           <ContactForm onPrivacyClick={() => undefined} />
         </div>
       </div>
@@ -442,11 +442,40 @@ function HowItWorks() {
   );
 }
 
+function FAQ() {
+  const questions = [
+    ["Do you list properties on the website?", "No. We keep the website enquiry-led. Share your area, budget, preferences, or property need and we will guide the next conversation."],
+    ["Can owners who live away get local support?", "Yes, where the requirement and responsibilities are agreed in advance. We coordinate the next action and share agreed updates."],
+    ["Which Bengaluru areas do you cover?", "We focus on confirmed areas across Bengaluru’s South-East and employment corridors. See the Areas section for the current coverage."],
+  ];
+  return (
+    <section className="border-y py-20 md:py-24" style={{ background: CREAM, borderColor: "#e4e8ed" }}>
+      <div className="mx-auto max-w-4xl px-5 md:px-8">
+        <div className="text-center">
+          <Eyebrow>Good to know</Eyebrow>
+          <SectionTitle>A clearer conversation starts here.</SectionTitle>
+        </div>
+        <div className="mt-10 divide-y rounded-2xl border bg-white px-6" style={{ borderColor: "#e4e8ed" }}>
+          {questions.map(([question, answer]) => (
+            <details key={question} className="group py-5">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-6 font-semibold" style={{ color: NAVY }}>
+                {question}
+                <ChevronDown className="shrink-0 transition group-open:rotate-180" style={{ color: GOLD }} size={18} />
+              </summary>
+              <p className="max-w-2xl pt-3 leading-relaxed" style={{ color: MUTED }}>{answer}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Contact() {
   return (
     <section id="contact" className="py-20 md:py-28" style={{ background: CREAM }}>
       <div className="mx-auto max-w-7xl px-5 md:px-8">
-        <div className="grid gap-10 lg:grid-cols-2 lg:items-start lg:gap-16">
+        <div className="grid gap-10 lg:grid-cols-[.9fr_1.1fr] lg:items-start">
           <div>
             <Eyebrow>Start a conversation</Eyebrow>
             <SectionTitle>Tell us what you need from Bengaluru property.</SectionTitle>
@@ -529,7 +558,7 @@ function Contact() {
               </div>
             </div>
           </div>
-          <div className="mx-auto w-full max-w-[440px] rounded-2xl bg-white p-2 shadow-xl lg:mx-0 lg:justify-self-end">
+          <div className="rounded-2xl bg-white p-2 shadow-xl">
             <ContactForm onPrivacyClick={() => undefined} />
           </div>
         </div>
@@ -624,6 +653,7 @@ function Index() {
         <Areas />
         <Reviews />
         <HowItWorks />
+        <FAQ />
         <Contact />
       </main>
       <Footer />
