@@ -3,13 +3,16 @@ import { CheckCircle2 } from "lucide-react";
 import { NAVY, GOLD } from "@/routes/index";
 import { submitLead } from "@/lib/submitLead";
 
-// Hero "Talk to Our Expert" form — compact 3-field lead capture.
+// Hero "Talk to Our Expert" form — one shared enquiry flow for all four services.
 // State is fully local; this component never reads from or writes to any
 // other form's state.
 const ContactForm: React.FC<{ onPrivacyClick: () => void }> = ({ onPrivacyClick }) => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [requirement, setRequirement] = useState("");
+  const [location, setLocation] = useState("");
+  const [budget, setBudget] = useState("");
+  const [details, setDetails] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [succeeded, setSucceeded] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -29,7 +32,7 @@ const ContactForm: React.FC<{ onPrivacyClick: () => void }> = ({ onPrivacyClick 
       return;
     }
     if (!requirement) {
-      setError("Please select a requirement.");
+      setError("Please select how we can help.");
       return;
     }
 
@@ -40,6 +43,9 @@ const ContactForm: React.FC<{ onPrivacyClick: () => void }> = ({ onPrivacyClick 
         name: trimmedName,
         phone: `+91 ${digits}`,
         requirement,
+        location: location.trim(),
+        budget: budget.trim(),
+        details: details.trim(),
         source: "Website Hero Form",
       });
       if (res.success) {
@@ -47,6 +53,9 @@ const ContactForm: React.FC<{ onPrivacyClick: () => void }> = ({ onPrivacyClick 
         setName("");
         setPhone("");
         setRequirement("");
+        setLocation("");
+        setBudget("");
+        setDetails("");
       } else {
         setError(res.error || "Something went wrong. Please try again or call us.");
       }
@@ -96,7 +105,7 @@ const ContactForm: React.FC<{ onPrivacyClick: () => void }> = ({ onPrivacyClick 
       className="w-full max-w-md rounded-2xl bg-white p-6 shadow-xl md:p-7 mx-auto border border-brand-border"
       aria-label="Talk to our expert"
     >
-      <h3 className="mb-5 text-lg font-bold text-brand-navy">Talk to Our Expert</h3>
+      <h3 className="mb-5 text-lg font-bold text-brand-navy">Tell us what you need</h3>
 
       <div className="space-y-4">
         <div>
@@ -151,7 +160,7 @@ const ContactForm: React.FC<{ onPrivacyClick: () => void }> = ({ onPrivacyClick 
             htmlFor="hero-requirement"
             className="mb-1.5 block text-xs font-semibold text-gray-600"
           >
-            Requirement <span className="text-red-500">*</span>
+            How can we help? <span className="text-red-500">*</span>
           </label>
           <select
             id="hero-requirement"
@@ -161,13 +170,61 @@ const ContactForm: React.FC<{ onPrivacyClick: () => void }> = ({ onPrivacyClick 
             className={inputBase}
             style={{ borderColor: "#E5E7EB" }}
           >
-            <option value="">Select...</option>
-            <option>Looking to Rent</option>
-            <option>Looking to Buy</option>
-            <option>Looking to Sell</option>
-            <option>Property Management</option>
-            <option>Investment Advisory</option>
+            <option value="">Select a service...</option>
+            <option>Find a property</option>
+            <option>Rent out my property</option>
+            <option>Manage my property</option>
+            <option>Prepare and care for my property</option>
           </select>
+        </div>
+
+        <div>
+          <label htmlFor="hero-location" className="mb-1.5 block text-xs font-semibold text-gray-600">
+            Preferred Bengaluru area
+          </label>
+          <input
+            id="hero-location"
+            type="text"
+            autoComplete="address-level2"
+            placeholder="Area or neighbourhood"
+            value={location}
+            onChange={(e) => setLocation(e.target.value)}
+            disabled={isSubmitting}
+            className={inputBase}
+            style={{ borderColor: "#E5E7EB" }}
+          />
+        </div>
+
+        <div>
+          <label htmlFor="hero-budget" className="mb-1.5 block text-xs font-semibold text-gray-600">
+            Budget or property details
+          </label>
+          <input
+            id="hero-budget"
+            type="text"
+            placeholder="Budget, property type, bedrooms..."
+            value={budget}
+            onChange={(e) => setBudget(e.target.value)}
+            disabled={isSubmitting}
+            className={inputBase}
+            style={{ borderColor: "#E5E7EB" }}
+          />
+        </div>
+
+        <div>
+          <label htmlFor="hero-details" className="mb-1.5 block text-xs font-semibold text-gray-600">
+            How can we help?
+          </label>
+          <textarea
+            id="hero-details"
+            rows={3}
+            placeholder="Tell us what you need and any timing or urgency"
+            value={details}
+            onChange={(e) => setDetails(e.target.value)}
+            disabled={isSubmitting}
+            className={`${inputBase} resize-y`}
+            style={{ borderColor: "#E5E7EB" }}
+          />
         </div>
 
         {error && (

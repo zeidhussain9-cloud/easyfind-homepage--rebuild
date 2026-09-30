@@ -3,7 +3,8 @@
  *
  * Primary: Formspree — real JSON response, email notification, dashboard.
  * Fallback: Google Forms (no-cors) — blind fire, used when VITE_FORMSPREE_ID
- *           is not set. Preserves existing behavior until Formspree activates.
+ *           is not set. The browser cannot inspect the response, so receipt is
+ *           verified separately against the form's response API.
  *
  * To activate Formspree:
  *   1. Create a free account at https://formspree.io
@@ -32,9 +33,9 @@ export interface SubmitResult {
 
 const FORMSPREE_ID = import.meta.env["VITE_FORMSPREE_ID"] as string | undefined;
 
-// ── ACTUAL VALUES FROM THE CURRENT CODEBASE ───────────────────────────────
+// ── VERIFIED VALUES FROM THE EASYFIND PROPERTY ENQUIRY FORM ────────────────
 const GOOGLE_FORMS_URL =
-  "https://docs.google.com/forms/d/e/1FAIpQLSeyRnYIMCl3ouDgMfGkZBK57ccIeIk6e6nlYmoZubRaoLdOsA/formResponse";
+  "https://docs.google.com/forms/d/e/1FAIpQLSd26gJMNZQIBSAbnOD6htK4xwcDfd_w4S_hIeOPaemAo6ny0w/formResponse";
 // ────────────────────────────────────────────────────────────────────────────
 
 export async function submitLead(data: LeadData): Promise<SubmitResult> {
@@ -90,13 +91,12 @@ async function submitViaFormspree(data: LeadData): Promise<SubmitResult> {
 async function submitViaGoogleForms(data: LeadData): Promise<SubmitResult> {
   // No-cors fallback — cannot verify success, assumes success on fire.
   const body = new URLSearchParams({
-    "entry.647419092": data.name,
-    "entry.1504466253": data.phone,
-    "entry.1645082311": data.requirement,
-    "entry.616237414": data.location ?? "",
-    "entry.1733021043": data.budget ?? "",
-    "entry.1656301094": data.details ?? "",
-    "entry.128907828": data.source,
+    "entry.79249073": data.name,
+    "entry.295366590": data.phone,
+    "entry.858239432": data.requirement,
+    "entry.1491521251": data.location ?? "",
+    "entry.17497884": data.budget ?? "",
+    "entry.294976446": data.details ?? "",
   });
 
   const controller = new AbortController();
