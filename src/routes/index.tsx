@@ -1,6 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Helmet } from "react-helmet-async";
-import { ArrowRight, Check, ChevronDown, Mail, MapPin, Menu, MessageCircle, X } from "lucide-react";
+import {
+  ArrowRight,
+  Check,
+  ChevronDown,
+  Mail,
+  MapPin,
+  Menu,
+  MessageCircle,
+  Phone,
+  X,
+} from "lucide-react";
 import { useState, type ReactNode } from "react";
 import ContactForm from "../components/ContactForm";
 
@@ -12,6 +22,7 @@ const CREAM = "#f7f5ef";
 const INK = "#223044";
 const MUTED = "#667384";
 const WHATSAPP = "https://wa.me/919148338801";
+const CALL = "tel:+919148338801";
 const MAPS = "https://maps.app.goo.gl/aFny22T8D57v5dzK8?g_st=ac";
 
 const areas = [
@@ -419,6 +430,57 @@ function Reviews() {
   );
 }
 
+function WhyEasyFind() {
+  const points = [
+    [
+      "Enquiry-led, not a listing portal",
+      "Start with your requirement and get a practical next step.",
+    ],
+    [
+      "Local coordination",
+      "We agree the scope, coordinate the next action, and share updates as agreed.",
+    ],
+    [
+      "Clear service routes",
+      "Find, rent out, manage, or prepare and care for a Bengaluru property.",
+    ],
+  ];
+  return (
+    <section
+      className="border-y py-20 md:py-24"
+      style={{ background: CREAM, borderColor: "#e4e8ed" }}
+    >
+      <div className="mx-auto max-w-7xl px-5 md:px-8">
+        <div className="max-w-2xl">
+          <Eyebrow>Why EasyFind</Eyebrow>
+          <SectionTitle>Local support, clearly handled.</SectionTitle>
+          <p className="mt-5 leading-relaxed" style={{ color: MUTED }}>
+            A straightforward starting point for people looking for a home and owners who need
+            practical support on the ground.
+          </p>
+        </div>
+        <div className="mt-10 grid gap-4 md:grid-cols-3">
+          {points.map(([title, text]) => (
+            <div
+              key={title}
+              className="rounded-2xl border bg-white p-6"
+              style={{ borderColor: "#e4e8ed" }}
+            >
+              <Check size={20} style={{ color: GOLD }} />
+              <h3 className="mt-5 text-lg font-semibold" style={{ color: NAVY }}>
+                {title}
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed" style={{ color: MUTED }}>
+                {text}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function HowItWorks() {
   return (
     <section id="how-it-works" className="py-20 md:py-28">
@@ -586,6 +648,29 @@ function Contact() {
                   </span>
                 </span>
               </a>
+              <a
+                href={CALL}
+                className="flex items-center gap-4 rounded-xl bg-white p-4 shadow-sm transition hover:-translate-y-0.5"
+                aria-label="Call EasyFind"
+              >
+                <span
+                  className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full"
+                  style={{ background: "#fbf4df", color: GOLD }}
+                >
+                  <Phone size={20} />
+                </span>
+                <span>
+                  <span
+                    className="block text-xs font-semibold uppercase tracking-wider"
+                    style={{ color: MUTED }}
+                  >
+                    Phone
+                  </span>
+                  <span className="mt-1 block font-semibold" style={{ color: NAVY }}>
+                    Call EasyFind
+                  </span>
+                </span>
+              </a>
             </div>
             <div
               className="mt-8 flex items-start gap-4 rounded-xl border bg-white/60 p-5"
@@ -685,6 +770,66 @@ function Footer() {
         <p className="mt-4 text-xs" style={{ color: MUTED }}>
           Customer-facing brand of EASYFIND REALTY SOLUTIONS PRIVATE LIMITED.
         </p>
+        <div
+          className="mt-8 grid gap-8 border-t pt-8 sm:grid-cols-3"
+          style={{ borderColor: "#e4e8ed" }}
+        >
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-wider" style={{ color: GOLD }}>
+              Our services
+            </p>
+            <p className="mt-3 text-sm leading-7" style={{ color: MUTED }}>
+              Find a property
+              <br />
+              Rent out my property
+              <br />
+              Manage my property
+              <br />
+              Prepare and care
+            </p>
+          </div>
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-wider" style={{ color: GOLD }}>
+              Local coverage
+            </p>
+            <p className="mt-3 text-sm leading-7" style={{ color: MUTED }}>
+              East Bengaluru and confirmed residential and employment corridors.{" "}
+              <a
+                href="#areas"
+                className="font-semibold underline underline-offset-2"
+                style={{ color: NAVY }}
+              >
+                View areas
+              </a>
+            </p>
+          </div>
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-wider" style={{ color: GOLD }}>
+              Contact
+            </p>
+            <p className="mt-3 text-sm leading-7" style={{ color: MUTED }}>
+              <a
+                href={CALL}
+                className="font-semibold underline underline-offset-2"
+                style={{ color: NAVY }}
+              >
+                Call EasyFind
+              </a>
+              <br />
+              <a
+                href={WHATSAPP}
+                target="_blank"
+                rel="noreferrer"
+                className="font-semibold underline underline-offset-2"
+                style={{ color: NAVY }}
+              >
+                WhatsApp us
+              </a>
+              <br />
+              info@easyfindprops.com
+            </p>
+          </div>
+        </div>
         <nav className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-xs" aria-label="Legal">
           <a href="/legal/privacy" className="underline underline-offset-2" style={{ color: NAVY }}>
             Privacy
@@ -733,6 +878,7 @@ function Index() {
         <OwnerPromise />
         <Areas />
         <Reviews />
+        <WhyEasyFind />
         <HowItWorks />
         <FAQ />
         <Contact />
