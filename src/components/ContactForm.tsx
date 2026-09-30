@@ -3,6 +3,56 @@ import { CheckCircle2 } from "lucide-react";
 import { NAVY, GOLD } from "@/routes/index";
 import { submitLead } from "@/lib/submitLead";
 
+const serviceGuidance: Record<
+  string,
+  {
+    areaLabel: string;
+    areaPlaceholder: string;
+    propertyLabel: string;
+    propertyPlaceholder: string;
+    detailsLabel: string;
+    detailsPlaceholder: string;
+    helper: string;
+  }
+> = {
+  "Find a property": {
+    areaLabel: "Preferred Bengaluru area",
+    areaPlaceholder: "Area or neighbourhood",
+    propertyLabel: "Budget and property preferences",
+    propertyPlaceholder: "Budget, property type, bedrooms...",
+    detailsLabel: "Move-in timing and requirements",
+    detailsPlaceholder: "Tell us when you need to move and what matters most",
+    helper: "Share the area, budget, and move-in timeline you are considering.",
+  },
+  "Rent out my property": {
+    areaLabel: "Property area",
+    areaPlaceholder: "Where is the property located?",
+    propertyLabel: "Property details",
+    propertyPlaceholder: "Property type, bedrooms, furnishing...",
+    detailsLabel: "Rent-out timing and requirements",
+    detailsPlaceholder: "Tell us when it will be available and what support you need",
+    helper: "Share the location, property basics, and when you want to rent it out.",
+  },
+  "Manage my property": {
+    areaLabel: "Property location",
+    areaPlaceholder: "Area or neighbourhood",
+    propertyLabel: "Current property details",
+    propertyPlaceholder: "Property type, occupancy, current status...",
+    detailsLabel: "Management support needed",
+    detailsPlaceholder: "Tell us what needs coordinating and how we can help",
+    helper: "Share the location and the local coordination you need.",
+  },
+  "Prepare and care for my property": {
+    areaLabel: "Property location",
+    areaPlaceholder: "Area or neighbourhood",
+    propertyLabel: "Work or property details",
+    propertyPlaceholder: "Property type, current condition, scope...",
+    detailsLabel: "Preparation or care required",
+    detailsPlaceholder: "Tell us what needs arranging and your preferred timing",
+    helper: "Share what needs preparing, checking, repairing, or coordinating.",
+  },
+};
+
 // Hero "Talk to Our Expert" form — one shared enquiry flow for all four services.
 // State is fully local; this component never reads from or writes to any
 // other form's state.
@@ -69,6 +119,7 @@ const ContactForm: React.FC<{ onPrivacyClick: () => void }> = ({ onPrivacyClick 
 
   const inputBase =
     "w-full rounded-lg border bg-white px-4 py-3 text-sm text-slate-900 shadow-sm outline-none transition focus:border-brand-gold/80 focus:ring-2 focus:ring-brand-gold/30 disabled:opacity-60";
+  const guidance = serviceGuidance[requirement];
 
   if (succeeded) {
     return (
@@ -105,7 +156,10 @@ const ContactForm: React.FC<{ onPrivacyClick: () => void }> = ({ onPrivacyClick 
       className="w-full max-w-md rounded-2xl bg-white p-6 shadow-xl md:p-7 mx-auto border border-brand-border"
       aria-label="Talk to our expert"
     >
-      <h3 className="mb-5 text-lg font-bold text-brand-navy">Tell us what you need</h3>
+      <h3 className="mb-2 text-lg font-bold text-brand-navy">Tell us what you need</h3>
+      <p className="mb-5 text-sm leading-relaxed text-gray-500" aria-live="polite">
+        {guidance?.helper ?? "Choose a service and we’ll tailor the questions to your requirement."}
+      </p>
 
       <div className="space-y-4">
         <div>
@@ -179,14 +233,17 @@ const ContactForm: React.FC<{ onPrivacyClick: () => void }> = ({ onPrivacyClick 
         </div>
 
         <div>
-          <label htmlFor="hero-location" className="mb-1.5 block text-xs font-semibold text-gray-600">
-            Preferred Bengaluru area
+          <label
+            htmlFor="hero-location"
+            className="mb-1.5 block text-xs font-semibold text-gray-600"
+          >
+            {guidance?.areaLabel ?? "Preferred Bengaluru area"}
           </label>
           <input
             id="hero-location"
             type="text"
             autoComplete="address-level2"
-            placeholder="Area or neighbourhood"
+            placeholder={guidance?.areaPlaceholder ?? "Area or neighbourhood"}
             value={location}
             onChange={(e) => setLocation(e.target.value)}
             disabled={isSubmitting}
@@ -197,12 +254,12 @@ const ContactForm: React.FC<{ onPrivacyClick: () => void }> = ({ onPrivacyClick 
 
         <div>
           <label htmlFor="hero-budget" className="mb-1.5 block text-xs font-semibold text-gray-600">
-            Budget or property details
+            {guidance?.propertyLabel ?? "Budget or property details"}
           </label>
           <input
             id="hero-budget"
             type="text"
-            placeholder="Budget, property type, bedrooms..."
+            placeholder={guidance?.propertyPlaceholder ?? "Budget, property type, bedrooms..."}
             value={budget}
             onChange={(e) => setBudget(e.target.value)}
             disabled={isSubmitting}
@@ -212,13 +269,18 @@ const ContactForm: React.FC<{ onPrivacyClick: () => void }> = ({ onPrivacyClick 
         </div>
 
         <div>
-          <label htmlFor="hero-details" className="mb-1.5 block text-xs font-semibold text-gray-600">
-            How can we help?
+          <label
+            htmlFor="hero-details"
+            className="mb-1.5 block text-xs font-semibold text-gray-600"
+          >
+            {guidance?.detailsLabel ?? "What would you like help with?"}
           </label>
           <textarea
             id="hero-details"
             rows={3}
-            placeholder="Tell us what you need and any timing or urgency"
+            placeholder={
+              guidance?.detailsPlaceholder ?? "Tell us what you need and any timing or urgency"
+            }
             value={details}
             onChange={(e) => setDetails(e.target.value)}
             disabled={isSubmitting}
