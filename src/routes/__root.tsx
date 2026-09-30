@@ -76,19 +76,19 @@ function RootComponent() {
         <Helmet>
           <meta charSet="utf-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <title>EasyFind Property Solutions | Bangalore's Trusted Property Partner</title>
+          <title>EasyFind Property Solutions | Your On-Ground Property Partner in Bengaluru</title>
           <meta
             name="description"
-            content="Find, Own, and Manage property in Bangalore. Professional rental services, property management, and investment advisory with 4.9★ rating."
+            content="EasyFind helps people find homes in Bengaluru and helps property owners manage what matters—with local, clear, practical support."
           />
           <meta name="author" content="EasyFind Property Solutions" />
           <meta
             property="og:title"
-            content="EasyFind Property Solutions | Bangalore's Trusted Property Partner"
+            content="EasyFind Property Solutions | Your On-Ground Property Partner in Bengaluru"
           />
           <meta
             property="og:description"
-            content="Find, Own, and Manage property in Bangalore. Professional rental services, property management, and investment advisory with 4.9★ rating."
+            content="EasyFind helps people find homes in Bengaluru and helps property owners manage what matters—with local, clear, practical support."
           />
           <meta property="og:type" content="website" />
           <meta property="og:url" content="https://easyfindprops.com" />
@@ -98,11 +98,11 @@ function RootComponent() {
           <meta name="twitter:card" content="summary_large_image" />
           <meta
             name="twitter:title"
-            content="EasyFind Property Solutions | Bangalore's Trusted Property Partner"
+            content="EasyFind Property Solutions | Your On-Ground Property Partner in Bengaluru"
           />
           <meta
             name="twitter:description"
-            content="Find, Own, and Manage property in Bangalore. Professional rental services, property management, and investment advisory with 4.9★ rating."
+            content="EasyFind helps people find homes in Bengaluru and helps property owners manage what matters—with local, clear, practical support."
           />
           <meta name="twitter:image" content="https://easyfindprops.com/og-image.jpg" />
 

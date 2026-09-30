@@ -470,6 +470,8 @@ function FAQ() {
   const questions = [
     ["Do you list properties on the website?", "No. We keep the website enquiry-led. Share your area, budget, preferences, or property need and we will guide the next conversation."],
     ["Can owners who live away get local support?", "Yes, where the requirement and responsibilities are agreed in advance. We coordinate the next action and share agreed updates."],
+    ["When will I hear back after an enquiry?", "We aim to acknowledge enquiries within one business day. Completion timelines depend on the requirement and the agreed scope."],
+    ["How are fees handled?", "Fees and any third-party or vendor charges are agreed case by case according to the requirement and scope. We do not publish a universal price list."],
     ["Which Bengaluru areas do you cover?", "We focus on confirmed areas across Bengaluru’s South-East and employment corridors. See the Areas section for the current coverage."],
   ];
   return (
