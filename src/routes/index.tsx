@@ -600,7 +600,7 @@ function Contact() {
                   Find EasyFind
                 </p>
                 <p className="mt-2 leading-relaxed" style={{ color: INK }}>
-                  Koramangala, Bengaluru, Karnataka
+                  East Bengaluru, Karnataka
                 </p>
                 <a
                   href={MAPS}

@@ -134,9 +134,10 @@ const ContactForm: React.FC<{ onPrivacyClick: () => void }> = ({ onPrivacyClick 
         >
           <CheckCircle2 size={30} />
         </div>
-        <h3 className="text-lg font-bold text-brand-navy">Thank you! We'll call you shortly.</h3>
+        <h3 className="text-lg font-bold text-brand-navy">Thank you — we received your enquiry.</h3>
         <p className="mt-2 text-sm text-gray-500">
-          Our team will reach out on the number you shared.
+          We aim to acknowledge enquiries within one business day. If you need to add context,
+          WhatsApp us using the contact option on this page.
         </p>
         <button
           type="button"
