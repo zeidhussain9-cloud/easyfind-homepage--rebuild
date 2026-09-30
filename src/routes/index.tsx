@@ -790,16 +790,16 @@ function Footer() {
           </div>
           <div>
             <p className="text-xs font-semibold uppercase tracking-wider" style={{ color: GOLD }}>
-              Local coverage
+              Local support
             </p>
             <p className="mt-3 text-sm leading-7" style={{ color: MUTED }}>
-              East Bengaluru and confirmed residential and employment corridors.{" "}
+              Practical property support across confirmed Bengaluru areas.{" "}
               <a
                 href="#areas"
                 className="font-semibold underline underline-offset-2"
                 style={{ color: NAVY }}
               >
-                View areas
+                Explore areas
               </a>
             </p>
           </div>
