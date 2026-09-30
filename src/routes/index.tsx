@@ -468,27 +468,57 @@ function HowItWorks() {
 
 function FAQ() {
   const questions = [
-    ["Do you list properties on the website?", "No. We keep the website enquiry-led. Share your area, budget, preferences, or property need and we will guide the next conversation."],
-    ["Can owners who live away get local support?", "Yes, where the requirement and responsibilities are agreed in advance. We coordinate the next action and share agreed updates."],
-    ["When will I hear back after an enquiry?", "We aim to acknowledge enquiries within one business day. Completion timelines depend on the requirement and the agreed scope."],
-    ["How are fees handled?", "Fees and any third-party or vendor charges are agreed case by case according to the requirement and scope. We do not publish a universal price list."],
-    ["Which Bengaluru areas do you cover?", "We focus on confirmed areas across Bengaluru’s South-East and employment corridors. See the Areas section for the current coverage."],
+    [
+      "Do you list properties on the website?",
+      "No. We keep the website enquiry-led. Share your area, budget, preferences, or property need and we will guide the next conversation.",
+    ],
+    [
+      "Can owners who live away get local support?",
+      "Yes, where the requirement and responsibilities are agreed in advance. We coordinate the next action and share agreed updates.",
+    ],
+    [
+      "When will I hear back after an enquiry?",
+      "We aim to acknowledge enquiries within one business day. Completion timelines depend on the requirement and the agreed scope.",
+    ],
+    [
+      "How are fees handled?",
+      "Fees and any third-party or vendor charges are agreed case by case according to the requirement and scope. We do not publish a universal price list.",
+    ],
+    [
+      "Which Bengaluru areas do you cover?",
+      "We focus on confirmed areas across Bengaluru’s South-East and employment corridors. See the Areas section for the current coverage.",
+    ],
   ];
   return (
-    <section className="border-y py-20 md:py-24" style={{ background: CREAM, borderColor: "#e4e8ed" }}>
+    <section
+      className="border-y py-20 md:py-24"
+      style={{ background: CREAM, borderColor: "#e4e8ed" }}
+    >
       <div className="mx-auto max-w-4xl px-5 md:px-8">
         <div className="text-center">
           <Eyebrow>Good to know</Eyebrow>
           <SectionTitle>A clearer conversation starts here.</SectionTitle>
         </div>
-        <div className="mt-10 divide-y rounded-2xl border bg-white px-6" style={{ borderColor: "#e4e8ed" }}>
+        <div
+          className="mt-10 divide-y rounded-2xl border bg-white px-6"
+          style={{ borderColor: "#e4e8ed" }}
+        >
           {questions.map(([question, answer]) => (
             <details key={question} className="group py-5">
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-6 font-semibold" style={{ color: NAVY }}>
+              <summary
+                className="flex cursor-pointer list-none items-center justify-between gap-6 font-semibold"
+                style={{ color: NAVY }}
+              >
                 {question}
-                <ChevronDown className="shrink-0 transition group-open:rotate-180" style={{ color: GOLD }} size={18} />
+                <ChevronDown
+                  className="shrink-0 transition group-open:rotate-180"
+                  style={{ color: GOLD }}
+                  size={18}
+                />
               </summary>
-              <p className="max-w-2xl pt-3 leading-relaxed" style={{ color: MUTED }}>{answer}</p>
+              <p className="max-w-2xl pt-3 leading-relaxed" style={{ color: MUTED }}>
+                {answer}
+              </p>
             </details>
           ))}
         </div>
@@ -655,13 +685,89 @@ function Footer() {
         <p className="mt-4 text-xs" style={{ color: MUTED }}>
           Customer-facing brand of EASYFIND REALTY SOLUTIONS PRIVATE LIMITED.
         </p>
-        <div id="privacy" className="mt-8 border-t pt-6" style={{ borderColor: "#e4e8ed" }}>
-          <h2 className="text-sm font-semibold" style={{ color: NAVY }}>Privacy Policy</h2>
-          <p className="mt-2 max-w-3xl text-xs leading-relaxed" style={{ color: MUTED }}>
-            We use the details you submit to respond to your property enquiry and coordinate the
-            next step you request. We do not publish your details as listings or sell them to third
-            parties. To ask about, update, or remove your enquiry data, email info@easyfindprops.com.
-          </p>
+        <nav className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-xs" aria-label="Legal">
+          <a href="#privacy" className="underline underline-offset-2" style={{ color: NAVY }}>
+            Privacy
+          </a>
+          <a href="#terms" className="underline underline-offset-2" style={{ color: NAVY }}>
+            Terms
+          </a>
+          <a href="#cookies" className="underline underline-offset-2" style={{ color: NAVY }}>
+            Cookies
+          </a>
+          <a href="#legal-notice" className="underline underline-offset-2" style={{ color: NAVY }}>
+            Legal notice
+          </a>
+          <a href="#accessibility" className="underline underline-offset-2" style={{ color: NAVY }}>
+            Accessibility
+          </a>
+        </nav>
+        <div className="mt-8 space-y-8 border-t pt-6" style={{ borderColor: "#e4e8ed" }}>
+          <section id="privacy" className="scroll-mt-8">
+            <h2 className="text-sm font-semibold" style={{ color: NAVY }}>
+              Privacy Policy
+            </h2>
+            <p className="mt-2 max-w-3xl text-xs leading-relaxed" style={{ color: MUTED }}>
+              EasyFind Property Solutions uses the details you submit to respond to your property
+              enquiry, understand your requirement, and coordinate the next agreed step. This may
+              include your name, phone number, preferred area, budget or property details, service
+              selection, and message. We do not publish your details as property listings or sell
+              them. We may share relevant information with a service provider only when needed to
+              carry out a requested and agreed service. We retain enquiry information for as long as
+              reasonably needed for enquiry handling, records, safety, and legal obligations. To ask
+              about, update, or remove your enquiry data, email info@easyfindprops.com.
+            </p>
+          </section>
+          <section id="terms" className="scroll-mt-8">
+            <h2 className="text-sm font-semibold" style={{ color: NAVY }}>
+              Terms of Use
+            </h2>
+            <p className="mt-2 max-w-3xl text-xs leading-relaxed" style={{ color: MUTED }}>
+              This website provides general information about EasyFind Property Solutions and
+              enables enquiries. Information is not a guarantee of availability, price, outcome,
+              inspection frequency, or service completion. Any service, vendor coordination,
+              responsibilities, fees, and timelines are confirmed separately according to the
+              requirement and agreed scope. You agree to provide accurate information and not use
+              this website for unlawful, abusive, fraudulent, or unauthorised activity.
+            </p>
+          </section>
+          <section id="cookies" className="scroll-mt-8">
+            <h2 className="text-sm font-semibold" style={{ color: NAVY }}>
+              Cookies and Similar Technologies
+            </h2>
+            <p className="mt-2 max-w-3xl text-xs leading-relaxed" style={{ color: MUTED }}>
+              This website is designed to use only the storage and technologies needed to operate
+              the site, remember basic interaction state, protect forms, and understand technical
+              performance where enabled by the hosting or embedded services. Google Maps, Google
+              Business Profile links, WhatsApp, and other third-party destinations have their own
+              policies. You can control cookies through your browser settings; disabling some
+              technologies may affect site functionality.
+            </p>
+          </section>
+          <section id="legal-notice" className="scroll-mt-8">
+            <h2 className="text-sm font-semibold" style={{ color: NAVY }}>
+              Legal Notice
+            </h2>
+            <p className="mt-2 max-w-3xl text-xs leading-relaxed" style={{ color: MUTED }}>
+              EasyFind Property Solutions is the customer-facing name of EASYFIND REALTY SOLUTIONS
+              PRIVATE LIMITED. The website is enquiry-led and does not maintain or publish a live
+              property listing inventory. References to areas, services, reviews, maps, or local
+              context are provided for practical guidance and do not constitute a valuation,
+              investment recommendation, legal advice, tax advice, or promise of a particular
+              result. For questions about this website, contact info@easyfindprops.com.
+            </p>
+          </section>
+          <section id="accessibility" className="scroll-mt-8">
+            <h2 className="text-sm font-semibold" style={{ color: NAVY }}>
+              Accessibility
+            </h2>
+            <p className="mt-2 max-w-3xl text-xs leading-relaxed" style={{ color: MUTED }}>
+              We aim to keep this website readable and usable across common devices, with labelled
+              form controls, keyboard-accessible actions, responsive layouts, and visible
+              focus/error states. If you have difficulty using a page or submitting an enquiry,
+              email info@easyfindprops.com and describe the issue so we can help.
+            </p>
+          </section>
         </div>
       </div>
     </footer>
