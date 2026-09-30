@@ -686,89 +686,30 @@ function Footer() {
           Customer-facing brand of EASYFIND REALTY SOLUTIONS PRIVATE LIMITED.
         </p>
         <nav className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-xs" aria-label="Legal">
-          <a href="#privacy" className="underline underline-offset-2" style={{ color: NAVY }}>
+          <a href="/legal/privacy" className="underline underline-offset-2" style={{ color: NAVY }}>
             Privacy
           </a>
-          <a href="#terms" className="underline underline-offset-2" style={{ color: NAVY }}>
+          <a href="/legal/terms" className="underline underline-offset-2" style={{ color: NAVY }}>
             Terms
           </a>
-          <a href="#cookies" className="underline underline-offset-2" style={{ color: NAVY }}>
+          <a href="/legal/cookies" className="underline underline-offset-2" style={{ color: NAVY }}>
             Cookies
           </a>
-          <a href="#legal-notice" className="underline underline-offset-2" style={{ color: NAVY }}>
+          <a
+            href="/legal/legal-notice"
+            className="underline underline-offset-2"
+            style={{ color: NAVY }}
+          >
             Legal notice
           </a>
-          <a href="#accessibility" className="underline underline-offset-2" style={{ color: NAVY }}>
+          <a
+            href="/legal/accessibility"
+            className="underline underline-offset-2"
+            style={{ color: NAVY }}
+          >
             Accessibility
           </a>
         </nav>
-        <div className="mt-8 space-y-8 border-t pt-6" style={{ borderColor: "#e4e8ed" }}>
-          <section id="privacy" className="scroll-mt-8">
-            <h2 className="text-sm font-semibold" style={{ color: NAVY }}>
-              Privacy Policy
-            </h2>
-            <p className="mt-2 max-w-3xl text-xs leading-relaxed" style={{ color: MUTED }}>
-              EasyFind Property Solutions uses the details you submit to respond to your property
-              enquiry, understand your requirement, and coordinate the next agreed step. This may
-              include your name, phone number, preferred area, budget or property details, service
-              selection, and message. We do not publish your details as property listings or sell
-              them. We may share relevant information with a service provider only when needed to
-              carry out a requested and agreed service. We retain enquiry information for as long as
-              reasonably needed for enquiry handling, records, safety, and legal obligations. To ask
-              about, update, or remove your enquiry data, email info@easyfindprops.com.
-            </p>
-          </section>
-          <section id="terms" className="scroll-mt-8">
-            <h2 className="text-sm font-semibold" style={{ color: NAVY }}>
-              Terms of Use
-            </h2>
-            <p className="mt-2 max-w-3xl text-xs leading-relaxed" style={{ color: MUTED }}>
-              This website provides general information about EasyFind Property Solutions and
-              enables enquiries. Information is not a guarantee of availability, price, outcome,
-              inspection frequency, or service completion. Any service, vendor coordination,
-              responsibilities, fees, and timelines are confirmed separately according to the
-              requirement and agreed scope. You agree to provide accurate information and not use
-              this website for unlawful, abusive, fraudulent, or unauthorised activity.
-            </p>
-          </section>
-          <section id="cookies" className="scroll-mt-8">
-            <h2 className="text-sm font-semibold" style={{ color: NAVY }}>
-              Cookies and Similar Technologies
-            </h2>
-            <p className="mt-2 max-w-3xl text-xs leading-relaxed" style={{ color: MUTED }}>
-              This website is designed to use only the storage and technologies needed to operate
-              the site, remember basic interaction state, protect forms, and understand technical
-              performance where enabled by the hosting or embedded services. Google Maps, Google
-              Business Profile links, WhatsApp, and other third-party destinations have their own
-              policies. You can control cookies through your browser settings; disabling some
-              technologies may affect site functionality.
-            </p>
-          </section>
-          <section id="legal-notice" className="scroll-mt-8">
-            <h2 className="text-sm font-semibold" style={{ color: NAVY }}>
-              Legal Notice
-            </h2>
-            <p className="mt-2 max-w-3xl text-xs leading-relaxed" style={{ color: MUTED }}>
-              EasyFind Property Solutions is the customer-facing name of EASYFIND REALTY SOLUTIONS
-              PRIVATE LIMITED. The website is enquiry-led and does not maintain or publish a live
-              property listing inventory. References to areas, services, reviews, maps, or local
-              context are provided for practical guidance and do not constitute a valuation,
-              investment recommendation, legal advice, tax advice, or promise of a particular
-              result. For questions about this website, contact info@easyfindprops.com.
-            </p>
-          </section>
-          <section id="accessibility" className="scroll-mt-8">
-            <h2 className="text-sm font-semibold" style={{ color: NAVY }}>
-              Accessibility
-            </h2>
-            <p className="mt-2 max-w-3xl text-xs leading-relaxed" style={{ color: MUTED }}>
-              We aim to keep this website readable and usable across common devices, with labelled
-              form controls, keyboard-accessible actions, responsive layouts, and visible
-              focus/error states. If you have difficulty using a page or submitting an enquiry,
-              email info@easyfindprops.com and describe the issue so we can help.
-            </p>
-          </section>
-        </div>
       </div>
     </footer>
   );
