@@ -121,7 +121,10 @@ function LegalPage() {
       </Helmet>
       <header className="border-b border-[#e4e8ed] bg-white">
         <div className="mx-auto flex max-w-5xl items-center justify-between px-5 py-5 md:px-8">
-          <Link to="/" className="flex items-center gap-3 text-sm font-semibold text-[#17324f]">
+          <Link
+            to="/#contact"
+            className="flex items-center gap-3 text-sm font-semibold text-[#17324f]"
+          >
             <img
               src="/easyfind-logo.webp"
               alt="EasyFind Property Solutions"
@@ -130,10 +133,10 @@ function LegalPage() {
             EasyFind Property Solutions
           </Link>
           <Link
-            to="/"
+            to="/#contact"
             className="text-sm font-semibold text-[#17324f] underline underline-offset-4"
           >
-            Back to website
+            Back to contact section
           </Link>
         </div>
       </header>
