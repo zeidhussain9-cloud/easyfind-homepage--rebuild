@@ -123,7 +123,7 @@ function LegalPage() {
         <div className="mx-auto flex max-w-5xl items-center justify-between px-5 py-5 md:px-8">
           <Link
             to="/#contact"
-            className="flex items-center gap-3 text-sm font-semibold text-[#17324f]"
+            className="flex items-center gap-3 text-sm font-semibold text-[#23435f]"
           >
             <img
               src="/easyfind-logo.webp"
@@ -134,7 +134,7 @@ function LegalPage() {
           </Link>
           <Link
             to="/#contact"
-            className="text-sm font-semibold text-[#17324f] underline underline-offset-4"
+            className="text-sm font-semibold text-[#23435f] underline underline-offset-4"
           >
             Back to contact section
           </Link>
@@ -144,14 +144,14 @@ function LegalPage() {
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#b89445]">
           EasyFind Property Solutions
         </p>
-        <h1 className="mt-4 font-serif text-4xl font-semibold tracking-tight text-[#17324f] md:text-5xl">
+        <h1 className="mt-4 font-serif text-4xl font-semibold tracking-tight text-[#23435f] md:text-5xl">
           {page.title}
         </h1>
         <p className="mt-5 text-lg leading-relaxed text-[#667384]">{page.intro}</p>
         <div className="mt-12 space-y-10 rounded-2xl border border-[#e4e8ed] bg-white p-6 shadow-sm md:p-10">
           {page.sections.map(([heading, text]) => (
             <section key={heading}>
-              <h2 className="text-lg font-semibold text-[#17324f]">{heading}</h2>
+              <h2 className="text-lg font-semibold text-[#23435f]">{heading}</h2>
               <p className="mt-3 leading-relaxed text-[#667384]">{text}</p>
             </section>
           ))}

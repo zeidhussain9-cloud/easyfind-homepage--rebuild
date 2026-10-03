@@ -71,14 +71,14 @@
 :root {
   --radius: 0.625rem;
   --background: oklch(1 0 0);
-  --brand-navy: #1A3A5C;
-  --brand-navy-deep: #14304d;
-  --brand-gold: #C9A84C;
+  --brand-navy: #23435f;
+  --brand-navy-deep: #1b354b;
+  --brand-gold: #c9a84c;
   --brand-gold-soft: #d9bd6b;
-  --brand-surface: #F8F9FB;
-  --brand-text: #1A1A2E;
-  --brand-muted: #6B7280;
-  --brand-border: #E5E7EB;
+  --brand-surface: #f8f9fb;
+  --brand-text: #1a1a2e;
+  --brand-muted: #6b7280;
+  --brand-border: #e5e7eb;
   --foreground: oklch(0.129 0.042 264.695);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.129 0.042 264.695);
