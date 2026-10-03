@@ -17,6 +17,7 @@ import ContactForm from "../components/ContactForm";
 export const Route = createFileRoute("/")({ component: Index });
 
 const NAVY = "#17324f";
+const HERO = "#1A3A5C";
 const GOLD = "#b89445";
 const CREAM = "#f7f5ef";
 const INK = "#223044";
@@ -49,21 +50,61 @@ const routes = [
     number: "01",
     title: "Find a property",
     text: "Tell us your area, budget, preferences, and timeline. We help you take the next step with local context.",
+    id: "find-a-property",
+    eyebrow: "For people looking for a home",
+    heading: "A clearer way to start your Bengaluru home search.",
+    detail:
+      "Share the area you have in mind, your budget, preferences, and move-in timeline. We help you frame the requirement properly, understand the local context, and decide on the next practical step.",
+    points: [
+      "Area and commute context",
+      "Budget and preference clarity",
+      "A conversation before the next action",
+    ],
   },
   {
     number: "02",
     title: "Rent out my property",
     text: "Coordinate enquiries, visits, documentation-related steps, and handover support for your Bengaluru property.",
+    id: "rent-out-my-property",
+    eyebrow: "For owners ready to let",
+    heading: "Practical support for renting out your property.",
+    detail:
+      "When you are ready to rent, we help coordinate the early conversations, visits, documentation-related steps, and handover details. The scope is agreed with you before the work begins.",
+    points: [
+      "Enquiry and visit coordination",
+      "Documentation-related follow-up",
+      "A clearer handover path",
+    ],
   },
   {
     number: "03",
     title: "Manage my property",
     text: "A local point of coordination for owners in Bengaluru, elsewhere in India, or abroad—with agreed updates.",
+    id: "manage-my-property",
+    eyebrow: "For owners who need local coordination",
+    heading: "A local point of contact while you are away.",
+    detail:
+      "Whether you are elsewhere in India or abroad, we help coordinate the local actions your property needs. We clarify responsibilities, keep the next step visible, and share updates as agreed.",
+    points: [
+      "Agreed scope before action",
+      "Local follow-up on practical issues",
+      "Clear updates and closure",
+    ],
   },
   {
     number: "04",
     title: "Prepare and care for my property",
     text: "Coordinate cleaning, painting, repairs, inspections, and related professional support, with EasyFind overseeing the agreed work.",
+    id: "prepare-and-care",
+    eyebrow: "For properties that need attention",
+    heading: "Get a property ready, looked after, or back on track.",
+    detail:
+      "From cleaning and painting to repairs, inspections, and readiness work, we coordinate the agreed local support and help keep the work understandable from start to finish.",
+    points: [
+      "Readiness checks and practical scope",
+      "Coordination with suitable professionals",
+      "Updates as the work moves forward",
+    ],
   },
 ];
 
@@ -194,7 +235,7 @@ function SectionTitle({ children, light = false }: { children: ReactNode; light?
 
 function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden pt-32" style={{ background: NAVY }}>
+    <section id="top" className="relative overflow-hidden pt-32" style={{ background: HERO }}>
       <div
         className="absolute inset-0 opacity-20"
         style={{
@@ -218,14 +259,14 @@ function Hero() {
           </p>
           <div className="mt-9 flex flex-wrap justify-center gap-3 lg:justify-start">
             <button
-              onClick={() => scrollTo("#services")}
+              onClick={() => scrollTo("#find-a-property")}
               className="rounded-full px-6 py-3.5 font-semibold"
               style={{ background: "#e3c976", color: NAVY }}
             >
               I’m looking for a property <ArrowRight className="ml-2 inline" size={17} />
             </button>
             <button
-              onClick={() => scrollTo("#owner-routes")}
+              onClick={() => scrollTo("#rent-out-my-property")}
               className="rounded-full border border-white/35 px-6 py-3.5 font-semibold text-white"
             >
               I own a property
@@ -245,7 +286,7 @@ function Hero() {
               <button
                 key={route.number}
                 type="button"
-                onClick={() => scrollTo("#contact")}
+                onClick={() => scrollTo(`#${route.id}`)}
                 className="flex w-full items-center justify-between rounded-xl border border-white/15 bg-white/10 px-4 py-3 text-left transition hover:bg-white/15"
               >
                 <span className="flex items-center gap-3 text-sm font-semibold text-white">
@@ -262,44 +303,62 @@ function Hero() {
   );
 }
 
-function Services() {
+function ServiceRoute({ route, index }: { route: (typeof routes)[number]; index: number }) {
+  const reversed = index % 2 === 1;
   return (
-    <section id="services" className="py-20 md:py-28" style={{ background: "white" }}>
-      <div className="mx-auto max-w-7xl px-5 md:px-8">
-        <div className="max-w-2xl">
-          <Eyebrow>Start with what you need</Eyebrow>
-          <SectionTitle>Property support that begins with a clear next step.</SectionTitle>
-          <p className="mt-5 text-base leading-relaxed" style={{ color: MUTED }}>
-            Renting, buying, letting, managing, or preparing a property all need a slightly
-            different kind of help. Choose the route that fits your situation.
+    <section
+      id={route.id}
+      className="scroll-mt-24 py-20 md:py-28"
+      style={{ background: index % 2 === 0 ? "white" : CREAM }}
+    >
+      <div
+        className={`mx-auto grid max-w-7xl items-center gap-12 px-5 md:px-8 lg:grid-cols-2 lg:gap-20 ${
+          reversed ? "lg:[&>div:first-child]:order-2" : ""
+        }`}
+      >
+        <div>
+          <div className="flex items-center gap-4">
+            <span className="font-serif text-4xl" style={{ color: GOLD }}>
+              {route.number}
+            </span>
+            <span className="h-px w-12" style={{ background: GOLD }} />
+          </div>
+          <Eyebrow>{route.eyebrow}</Eyebrow>
+          <SectionTitle>{route.heading}</SectionTitle>
+          <p className="mt-6 max-w-xl text-base leading-relaxed" style={{ color: MUTED }}>
+            {route.detail}
           </p>
+          <button
+            onClick={() => scrollTo("#contact")}
+            className="mt-8 rounded-full px-6 py-3.5 font-semibold"
+            style={{ background: NAVY, color: "white" }}
+          >
+            Start with this route <ArrowRight className="ml-2 inline" size={17} />
+          </button>
         </div>
-        <div className="mt-12 grid gap-4 md:grid-cols-2">
-          {routes.map((r) => (
-            <button
-              type="button"
-              onClick={() => scrollTo("#contact")}
-              key={r.number}
-              className="group rounded-2xl border p-7 text-left transition hover:-translate-y-1 hover:shadow-xl"
-              style={{ borderColor: "#e4e8ed" }}
-            >
-              <div className="flex items-start justify-between">
-                <span className="font-serif text-3xl" style={{ color: GOLD }}>
-                  {r.number}
+        <div
+          className="rounded-2xl border p-7 shadow-sm md:p-9"
+          style={{ borderColor: "#e4e8ed", background: "rgba(255,255,255,.72)" }}
+        >
+          <p className="text-xs font-semibold uppercase tracking-[.2em]" style={{ color: GOLD }}>
+            What this can include
+          </p>
+          <ul className="mt-6 space-y-4">
+            {route.points.map((point) => (
+              <li key={point} className="flex items-start gap-3">
+                <Check className="mt-0.5 shrink-0" size={19} style={{ color: GOLD }} />
+                <span className="leading-relaxed" style={{ color: INK }}>
+                  {point}
                 </span>
-                <ArrowRight
-                  className="transition group-hover:translate-x-1"
-                  style={{ color: GOLD }}
-                />
-              </div>
-              <h3 className="mt-8 text-xl font-semibold" style={{ color: NAVY }}>
-                {r.title}
-              </h3>
-              <p className="mt-3 leading-relaxed" style={{ color: MUTED }}>
-                {r.text}
-              </p>
-            </button>
-          ))}
+              </li>
+            ))}
+          </ul>
+          <div className="mt-8 border-t pt-6" style={{ borderColor: "#e4e8ed" }}>
+            <p className="text-sm leading-relaxed" style={{ color: MUTED }}>
+              We keep the conversation specific to your situation, so the next step is useful—not
+              vague.
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -344,6 +403,18 @@ function OwnerPromise() {
         </div>
       </div>
     </section>
+  );
+}
+
+function Services() {
+  return (
+    <>
+      <div id="services" className="scroll-mt-24">
+        {routes.map((route, index) => (
+          <ServiceRoute key={route.id} route={route} index={index} />
+        ))}
+      </div>
+    </>
   );
 }
 
