@@ -17,7 +17,7 @@ import ContactForm from "../components/ContactForm";
 export const Route = createFileRoute("/")({ component: Index });
 
 const NAVY = "#17324f";
-const HERO = "#1A3A5C";
+const HERO = "#2D5B80";
 const GOLD = "#b89445";
 const CREAM = "#f7f5ef";
 const INK = "#223044";
@@ -49,62 +49,70 @@ const routes = [
   {
     number: "01",
     title: "Find a property",
-    text: "Tell us your area, budget, preferences, and timeline. We help you take the next step with local context.",
+    text: "Looking to rent or purchase? Tell us your area, budget, preferences, and timeline so we can help you take the next step with local context.",
     id: "find-a-property",
-    eyebrow: "For people looking for a home",
-    heading: "A clearer way to start your Bengaluru home search.",
+    eyebrow: "For people looking to rent or purchase",
+    heading: "A clearer way to find the right Bengaluru property.",
     detail:
-      "Share the area you have in mind, your budget, preferences, and move-in timeline. We help you frame the requirement properly, understand the local context, and decide on the next practical step.",
+      "Whether you are looking to rent or buy, share the area you have in mind, your budget, property preferences, and timeline. We help you frame the requirement properly, understand the local context, and decide on the next practical step.",
     points: [
-      "Area and commute context",
-      "Budget and preference clarity",
-      "A conversation before the next action",
+      "Rental or purchase requirement",
+      "Area, commute, and budget context",
+      "A practical next step based on your timeline",
     ],
+    cta: "Start my property search",
+    note: "We start with your actual requirement—not a generic list of properties.",
   },
   {
     number: "02",
-    title: "Rent out my property",
-    text: "Coordinate enquiries, visits, documentation-related steps, and handover support for your Bengaluru property.",
+    title: "Rent out or sell my property",
+    text: "Coordinate enquiries, visits, documentation-related steps, and the next stage for your Bengaluru property.",
     id: "rent-out-my-property",
-    eyebrow: "For owners ready to let",
-    heading: "Practical support for renting out your property.",
+    eyebrow: "For owners ready to rent or sell",
+    heading: "A more considered route to rent out or sell.",
     detail:
-      "When you are ready to rent, we help coordinate the early conversations, visits, documentation-related steps, and handover details. The scope is agreed with you before the work begins.",
+      "When you are ready to rent out or sell, we help coordinate the early conversations, property visits, documentation-related steps, and handover or next-stage details. The scope is agreed with you before work begins.",
     points: [
-      "Enquiry and visit coordination",
+      "Enquiry, visit, and buyer or tenant coordination",
       "Documentation-related follow-up",
-      "A clearer handover path",
+      "A clearer handover or transaction next step",
     ],
+    cta: "Discuss my property",
+    note: "You stay clear on what is happening, what is needed, and what comes next.",
   },
   {
     number: "03",
     title: "Manage my property",
     text: "A local point of coordination for owners in Bengaluru, elsewhere in India, or abroad—with agreed updates.",
     id: "manage-my-property",
-    eyebrow: "For owners who need local coordination",
-    heading: "A local point of contact while you are away.",
+    eyebrow: "For owners in Bengaluru, India, and abroad",
+    heading: "Local property management, even when you are not nearby.",
     detail:
-      "Whether you are elsewhere in India or abroad, we help coordinate the local actions your property needs. We clarify responsibilities, keep the next step visible, and share updates as agreed.",
+      "Whether you live in Bengaluru, elsewhere in India, or abroad, we help coordinate the day-to-day property actions that are difficult to handle from a distance. That can include tenant or occupant coordination, inspections, maintenance follow-up, vacancy readiness, and agreed updates.",
     points: [
-      "Agreed scope before action",
-      "Local follow-up on practical issues",
-      "Clear updates and closure",
+      "Tenant, occupant, inspection, and access coordination",
+      "Maintenance and issue follow-up with local professionals",
+      "Agreed updates, records, and clear closure",
     ],
+    cta: "Discuss property management",
+    note: "The exact responsibilities, response expectations, and vendor scope are agreed with you first.",
   },
   {
     number: "04",
     title: "Prepare and care for my property",
-    text: "Coordinate cleaning, painting, repairs, inspections, and related professional support, with EasyFind overseeing the agreed work.",
+    text: "Coordinate cleaning, painting, pest control, repairs, inspections, documentation support, and other property needs.",
     id: "prepare-and-care",
-    eyebrow: "For properties that need attention",
-    heading: "Get a property ready, looked after, or back on track.",
+    eyebrow: "For properties that need practical care",
+    heading: "From cleaning and pest control to repairs and readiness.",
     detail:
-      "From cleaning and painting to repairs, inspections, and readiness work, we coordinate the agreed local support and help keep the work understandable from start to finish.",
+      "For a move-in, handover, sale, tenant change, or simply a property that needs attention, we coordinate the agreed work: cleaning, painting, pest control, repairs, inspections, documentation support, utility or access follow-up, and other practical requirements.",
     points: [
-      "Readiness checks and practical scope",
-      "Coordination with suitable professionals",
-      "Updates as the work moves forward",
+      "Cleaning, painting, pest control, repairs, and inspections",
+      "Documentation, access, utility, and readiness support",
+      "Coordination with suitable professionals and agreed updates",
     ],
+    cta: "Plan property care",
+    note: "EasyFind coordinates the agreed local work and keeps the scope, progress, and next action visible.",
   },
 ];
 
@@ -263,7 +271,7 @@ function Hero() {
               className="rounded-full px-6 py-3.5 font-semibold"
               style={{ background: "#e3c976", color: NAVY }}
             >
-              I’m looking for a property <ArrowRight className="ml-2 inline" size={17} />
+              I’m looking to rent or buy <ArrowRight className="ml-2 inline" size={17} />
             </button>
             <button
               onClick={() => scrollTo("#rent-out-my-property")}
@@ -333,7 +341,7 @@ function ServiceRoute({ route, index }: { route: (typeof routes)[number]; index:
             className="mt-8 rounded-full px-6 py-3.5 font-semibold"
             style={{ background: NAVY, color: "white" }}
           >
-            Start with this route <ArrowRight className="ml-2 inline" size={17} />
+            {route.cta} <ArrowRight className="ml-2 inline" size={17} />
           </button>
         </div>
         <div
@@ -355,8 +363,7 @@ function ServiceRoute({ route, index }: { route: (typeof routes)[number]; index:
           </ul>
           <div className="mt-8 border-t pt-6" style={{ borderColor: "#e4e8ed" }}>
             <p className="text-sm leading-relaxed" style={{ color: MUTED }}>
-              We keep the conversation specific to your situation, so the next step is useful—not
-              vague.
+              {route.note}
             </p>
           </div>
         </div>
@@ -365,56 +372,13 @@ function ServiceRoute({ route, index }: { route: (typeof routes)[number]; index:
   );
 }
 
-function OwnerPromise() {
-  return (
-    <section id="owner-routes" className="py-20 md:py-28" style={{ background: CREAM }}>
-      <div className="mx-auto grid max-w-7xl gap-12 px-5 md:px-8 lg:grid-cols-[.85fr_1.15fr] lg:items-center">
-        <div>
-          <Eyebrow>For property owners</Eyebrow>
-          <SectionTitle>
-            Your Bengaluru property, looked after locally, with clear updates while you’re away.
-          </SectionTitle>
-          <p className="mt-6 leading-relaxed" style={{ color: MUTED }}>
-            Whether you live in Bengaluru, elsewhere in India, or abroad, EasyFind can act as the
-            local point of coordination for the work your property needs.
-          </p>
-          <button
-            onClick={() => scrollTo("#contact")}
-            className="mt-8 rounded-full px-6 py-3.5 font-semibold"
-            style={{ background: NAVY, color: "white" }}
-          >
-            Discuss my property <ArrowRight className="ml-2 inline" size={17} />
-          </button>
-        </div>
-        <div className="grid gap-4 sm:grid-cols-2">
-          {[
-            "Agree the scope before work begins",
-            "Coordinate suitable local professionals",
-            "Keep the next action clear",
-            "Share agreed updates and closure",
-          ].map((x) => (
-            <div key={x} className="flex gap-3 rounded-xl bg-white p-5">
-              <Check size={20} style={{ color: GOLD }} />
-              <span className="font-medium" style={{ color: INK }}>
-                {x}
-              </span>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
 function Services() {
   return (
-    <>
-      <div id="services" className="scroll-mt-24">
-        {routes.map((route, index) => (
-          <ServiceRoute key={route.id} route={route} index={index} />
-        ))}
-      </div>
-    </>
+    <div id="services" className="scroll-mt-24">
+      {routes.map((route, index) => (
+        <ServiceRoute key={route.id} route={route} index={index} />
+      ))}
+    </div>
   );
 }
 
@@ -946,7 +910,6 @@ function Index() {
       <main>
         <Hero />
         <Services />
-        <OwnerPromise />
         <Areas />
         <Reviews />
         <WhyEasyFind />
