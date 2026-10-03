@@ -12,7 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as CustomerProtectionRouteImport } from './routes/customer-protection'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as LegalSlugRouteImport } from './routes/legal.$slug'
-import { Route as GuidesPropertyManagementBellandurRouteImport } from './routes/guides.property-management-bellandur'
+import { Route as GuidesPropertyManagementBengaluruRouteImport } from './routes/guides.property-management-bengaluru'
 
 const CustomerProtectionRoute = CustomerProtectionRouteImport.update({
   id: '/customer-protection',
@@ -29,30 +29,30 @@ const LegalSlugRoute = LegalSlugRouteImport.update({
   path: '/legal/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
-const GuidesPropertyManagementBellandurRoute =
-  GuidesPropertyManagementBellandurRouteImport.update({
-    id: '/guides/property-management-bellandur',
-    path: '/guides/property-management-bellandur',
+const GuidesPropertyManagementBengaluruRoute =
+  GuidesPropertyManagementBengaluruRouteImport.update({
+    id: '/guides/property-management-bengaluru',
+    path: '/guides/property-management-bengaluru',
     getParentRoute: () => rootRouteImport,
   } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/customer-protection': typeof CustomerProtectionRoute
-  '/guides/property-management-bellandur': typeof GuidesPropertyManagementBellandurRoute
+  '/guides/property-management-bengaluru': typeof GuidesPropertyManagementBengaluruRoute
   '/legal/$slug': typeof LegalSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/customer-protection': typeof CustomerProtectionRoute
-  '/guides/property-management-bellandur': typeof GuidesPropertyManagementBellandurRoute
+  '/guides/property-management-bengaluru': typeof GuidesPropertyManagementBengaluruRoute
   '/legal/$slug': typeof LegalSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/customer-protection': typeof CustomerProtectionRoute
-  '/guides/property-management-bellandur': typeof GuidesPropertyManagementBellandurRoute
+  '/guides/property-management-bengaluru': typeof GuidesPropertyManagementBengaluruRoute
   '/legal/$slug': typeof LegalSlugRoute
 }
 export interface FileRouteTypes {
@@ -60,26 +60,26 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/customer-protection'
-    | '/guides/property-management-bellandur'
+    | '/guides/property-management-bengaluru'
     | '/legal/$slug'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/customer-protection'
-    | '/guides/property-management-bellandur'
+    | '/guides/property-management-bengaluru'
     | '/legal/$slug'
   id:
     | '__root__'
     | '/'
     | '/customer-protection'
-    | '/guides/property-management-bellandur'
+    | '/guides/property-management-bengaluru'
     | '/legal/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CustomerProtectionRoute: typeof CustomerProtectionRoute
-  GuidesPropertyManagementBellandurRoute: typeof GuidesPropertyManagementBellandurRoute
+  GuidesPropertyManagementBengaluruRoute: typeof GuidesPropertyManagementBengaluruRoute
   LegalSlugRoute: typeof LegalSlugRoute
 }
 
@@ -106,11 +106,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LegalSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/guides/property-management-bellandur': {
-      id: '/guides/property-management-bellandur'
-      path: '/guides/property-management-bellandur'
-      fullPath: '/guides/property-management-bellandur'
-      preLoaderRoute: typeof GuidesPropertyManagementBellandurRouteImport
+    '/guides/property-management-bengaluru': {
+      id: '/guides/property-management-bengaluru'
+      path: '/guides/property-management-bengaluru'
+      fullPath: '/guides/property-management-bengaluru'
+      preLoaderRoute: typeof GuidesPropertyManagementBengaluruRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -119,8 +119,8 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CustomerProtectionRoute: CustomerProtectionRoute,
-  GuidesPropertyManagementBellandurRoute:
-    GuidesPropertyManagementBellandurRoute,
+  GuidesPropertyManagementBengaluruRoute:
+    GuidesPropertyManagementBengaluruRoute,
   LegalSlugRoute: LegalSlugRoute,
 }
 export const routeTree = rootRouteImport

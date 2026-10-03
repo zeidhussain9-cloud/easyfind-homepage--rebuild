@@ -10,7 +10,7 @@ import {
   PageIntro,
 } from "../components/InformationPage";
 
-export const Route = createFileRoute("/guides/property-management-bellandur")({
+export const Route = createFileRoute("/guides/property-management-bengaluru")({
   component: PropertyManagementGuide,
 });
 
@@ -18,14 +18,14 @@ function PropertyManagementGuide() {
   return (
     <div className="min-h-screen bg-[#f7f5ef] text-[#223044]">
       <Helmet>
-        <title>Property Management in Bellandur | EasyFind Property Solutions</title>
+        <title>Property Management in Bengaluru | EasyFind Property Solutions</title>
         <meta
           name="description"
-          content="A practical guide for owners choosing local property management support in Bellandur and nearby Bengaluru areas."
+          content="A practical guide for owners choosing local property management support across confirmed Bengaluru areas."
         />
         <link
           rel="canonical"
-          href="https://easyfindprops.com/guides/property-management-bellandur"
+          href="https://easyfindprops.com/guides/property-management-bengaluru"
         />
       </Helmet>
       <InformationHeader />
@@ -34,15 +34,15 @@ function PropertyManagementGuide() {
         title="What good property management should look like."
       >
         <p>
-          A practical starting point for owners who need local support around Bellandur and nearby
-          Bengaluru areas—without unclear scope or hidden steps.
+          A practical starting point for owners who need local support across Bengaluru—without
+          unclear scope or hidden steps.
         </p>
       </PageIntro>
       <main className="mx-auto max-w-6xl px-5 py-14 md:px-8 md:py-20">
         <div className="grid gap-12 lg:grid-cols-[1.1fr_.9fr] lg:items-start">
           <article>
             <div className="flex flex-wrap gap-2">
-              {["Bellandur", "NRI owners", "Owner checklist"].map((tag) => (
+              {["Bengaluru", "NRI owners", "Owner checklist"].map((tag) => (
                 <span
                   key={tag}
                   className="rounded-full bg-[#e9eff1] px-3 py-1.5 text-xs font-semibold text-[#446274]"
@@ -87,7 +87,7 @@ function PropertyManagementGuide() {
             </p>
             <div className="mt-5 divide-y divide-[#e4e8ed]">
               <GuideLink
-                title="Renting out in Bellandur"
+                title="Renting out in Bengaluru"
                 text="What to clarify before enquiries, visits, and tenant selection."
               />
               <GuideLink

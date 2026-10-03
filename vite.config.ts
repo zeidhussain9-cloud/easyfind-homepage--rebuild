@@ -12,7 +12,7 @@ const staticRoutes = [
   "legal/legal-notice",
   "legal/accessibility",
   "customer-protection",
-  "guides/property-management-bellandur",
+  "guides/property-management-bengaluru",
 ];
 
 function staticSpaRoutes() {

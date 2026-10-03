@@ -972,7 +972,7 @@ function Footer() {
             Customer protection
           </a>
           <a
-            href="/guides/property-management-bellandur"
+            href="/guides/property-management-bengaluru"
             className="underline underline-offset-2"
             style={{ color: NAVY }}
           >
