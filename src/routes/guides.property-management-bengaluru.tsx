@@ -8,7 +8,6 @@ import {
   ContactStrip,
   InformationFooter,
   InformationHeader,
-  PageIntro,
 } from "../components/InformationPage";
 
 export const Route = createFileRoute("/guides/property-management-bengaluru")({
@@ -30,25 +29,57 @@ function PropertyManagementGuide() {
         />
       </Helmet>
       <InformationHeader />
-      <PageIntro
-        eyebrow="Bengaluru property guide"
-        title="Property management in Bengaluru: a practical owner's guide."
-      >
-        <p>
-          Property management is the agreed work that keeps a property moving when the owner cannot
-          be there for every visit, decision, or follow-up. The useful test is not a grand promise:
-          it is whether the scope, approvals, records, and next step are clear.
-        </p>
-      </PageIntro>
+      <section className="bg-[#1b354b] px-5 py-14 text-white md:px-8 md:py-20">
+        <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1.15fr_.85fr] lg:items-end">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#e3c976]">
+              Bengaluru property guide · 8 min read
+            </p>
+            <h1 className="mt-4 max-w-3xl font-serif text-4xl font-semibold leading-[1.08] md:text-6xl">
+              Property management in Bengaluru, without the fog.
+            </h1>
+            <p className="mt-6 max-w-2xl text-base leading-relaxed text-[#e2eaee] md:text-lg">
+              A practical owner’s guide to the local work, decisions, and records that should be
+              clear before you appoint support.
+            </p>
+          </div>
+          <div className="rounded-2xl border border-white/15 bg-white/[0.08] p-6 backdrop-blur-sm md:p-7">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#e3c976]">
+              The short answer
+            </p>
+            <p className="mt-4 font-serif text-2xl leading-snug text-white">
+              Good property management is not “everything handled.”
+            </p>
+            <p className="mt-3 text-sm leading-relaxed text-[#d4e0e5]">
+              It is a clear scope, a reliable local process, and an owner who knows what changed,
+              what needs a decision, and what happens next.
+            </p>
+          </div>
+        </div>
+      </section>
       <main className="mx-auto max-w-6xl px-5 py-14 md:px-8 md:py-20">
         <div className="grid gap-12 lg:grid-cols-[1.1fr_.9fr] lg:items-start">
           <article className="space-y-14">
+            <div className="grid gap-3 border-y border-[#e4e8ed] py-5 text-sm sm:grid-cols-3">
+              {[
+                ["For", "Bengaluru, India-based, and NRI owners"],
+                ["Focus", "Scope, access, repairs, updates, handover"],
+                ["Next step", "Discuss property management"],
+              ].map(([label, text]) => (
+                <div key={label}>
+                  <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#b89445]">
+                    {label}
+                  </p>
+                  <p className="mt-1 leading-relaxed text-[#446274]">{text}</p>
+                </div>
+              ))}
+            </div>
             <section>
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#b89445]">
                 Who this is for
               </p>
-              <h2 className="mt-3 font-serif text-3xl font-semibold leading-tight text-[#23435f] md:text-4xl">
-                For owners who need the local work to be visible.
+              <h2 className="mt-3 max-w-2xl font-serif text-3xl font-semibold leading-tight text-[#23435f] md:text-4xl">
+                The owner should not have to guess what is happening.
               </h2>
               <p className="mt-5 leading-relaxed text-[#667384]">
                 This guide is for Bengaluru owners, people living elsewhere in India, and NRI owners
