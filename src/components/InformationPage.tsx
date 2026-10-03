@@ -69,7 +69,7 @@ export function PageIntro({
   children: ReactNode;
 }) {
   return (
-    <section className="bg-[#1b354b] px-5 py-16 text-white md:px-8 md:py-24">
+    <section className="bg-[#23435f] px-5 py-16 text-white md:px-8 md:py-24">
       <div className="mx-auto max-w-6xl">
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#e3c976]">{eyebrow}</p>
         <h1 className="mt-4 max-w-3xl font-serif text-4xl font-semibold leading-tight md:text-6xl">
