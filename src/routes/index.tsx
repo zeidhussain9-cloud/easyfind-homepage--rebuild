@@ -49,12 +49,12 @@ const routes = [
   {
     number: "01",
     title: "Find a property",
-    text: "Looking to rent or purchase? Tell us your area, budget, preferences, and timeline so we can help you take the next step with local context.",
+    text: "Looking to rent or purchase? Tell us your area, budget, preferences, and timeline so we can help you take the next step with Bengaluru context.",
     id: "find-a-property",
     eyebrow: "For people looking to rent or purchase",
     heading: "A clearer way to find the right Bengaluru property.",
     detail:
-      "Whether you are looking to rent or buy, share the area you have in mind, your budget, property preferences, and timeline. We help you frame the requirement properly, understand the local context, and decide on the next practical step.",
+      "Whether you are looking to rent or buy, share the area you have in mind, your budget, property preferences, and timeline. We help you frame the requirement properly, understand the Bengaluru context, and decide on the next practical step.",
     points: [
       "Rental or purchase requirement",
       "Area, commute, and budget context",
@@ -83,7 +83,7 @@ const routes = [
   {
     number: "03",
     title: "Manage my property",
-    text: "A local point of coordination for owners in Bengaluru, elsewhere in India, or abroad—with agreed updates.",
+    text: "A dependable Bengaluru point of coordination for owners here, elsewhere in India, or abroad—with agreed updates.",
     id: "manage-my-property",
     eyebrow: "For owners in Bengaluru, India, and abroad",
     heading: "A Bengaluru-based property partner for owners near and far.",
@@ -91,13 +91,13 @@ const routes = [
       "Whether you live in Bengaluru, elsewhere in India, or abroad, we help coordinate the day-to-day property actions that are difficult to handle from a distance. That can include tenant or occupant coordination, inspections, maintenance follow-up, vacancy readiness, and agreed updates.",
     points: [
       "Tenant, occupant, inspection, and access coordination",
-      "Maintenance and issue follow-up with local professionals",
+      "Maintenance and issue follow-up with suitable professionals",
       "Agreed updates, records, and clear closure",
     ],
     subsections: [
       {
         title: "For owners in Bengaluru and elsewhere in India",
-        text: "Stay close to the property without having to chase every local detail.",
+        text: "Stay close to the property without having to chase every day-to-day detail.",
         points: [
           "Tenant or occupant coordination, visits, and inspections",
           "Maintenance requests, vendor follow-up, and work checks",
@@ -108,7 +108,7 @@ const routes = [
         title: "For NRI owners and owners living abroad",
         text: "A dependable Bengaluru point of contact across distance and time zones.",
         points: [
-          "Local checks, access, repairs, and urgent issue coordination",
+          "On-the-ground checks, access, repairs, and urgent issue coordination",
           "Photo and update-led visibility before and after agreed work",
           "A clear responsibility, scope, and escalation path",
         ],
@@ -123,7 +123,7 @@ const routes = [
     text: "Coordinate cleaning, painting, pest control, repairs, inspections, documentation support, and other property needs.",
     id: "prepare-and-care",
     eyebrow: "For properties that need practical care",
-    heading: "Property care, coordinated from one clear local plan.",
+    heading: "Property care, coordinated from one clear plan.",
     detail:
       "For a move-in, handover, sale, tenant change, or simply a property that needs attention, we coordinate the agreed work: cleaning, painting, pest control, repairs, inspections, documentation support, utility or access follow-up, and other practical requirements.",
     points: [
@@ -158,7 +158,7 @@ const routes = [
       },
     ],
     cta: "Plan property care",
-    note: "EasyFind coordinates the agreed local work and keeps the scope, progress, and next action visible.",
+    note: "EasyFind coordinates the agreed work and keeps the scope, progress, and next action visible.",
   },
 ];
 
@@ -308,8 +308,8 @@ function Hero() {
             in Bengaluru.
           </h1>
           <p className="mx-auto mt-7 max-w-xl text-lg leading-relaxed text-white/75 lg:mx-0">
-            We help people find homes in Bengaluru and help property owners manage what
-            matters—locally, clearly, and with practical support.
+            We help people find homes in Bengaluru and help property owners manage what matters—with
+            a clear point of contact and practical support.
           </p>
           <div className="mt-9 flex flex-wrap justify-center gap-3 lg:justify-start">
             <button
@@ -333,7 +333,7 @@ function Hero() {
             Tell us what your property needs.
           </h2>
           <p className="mt-4 leading-relaxed text-white/70">
-            Share the situation once and we’ll help you choose the right local route.
+            Share the situation once and we’ll help you choose the right next route.
           </p>
           <div className="mt-7 space-y-3">
             {routes.map((route) => (
@@ -482,7 +482,7 @@ function Areas() {
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <div className="max-w-2xl">
           <Eyebrow light>Local where it matters</Eyebrow>
-          <SectionTitle light>Useful local context, without the noise.</SectionTitle>
+          <SectionTitle light>Useful Bengaluru context, without the noise.</SectionTitle>
           <p className="mt-5 leading-relaxed text-white/70">
             EasyFind works across key residential and employment corridors in Bengaluru. Tell us
             your preferred area, property need, and timeline—we’ll help you understand the right
@@ -530,7 +530,7 @@ function Reviews() {
     <section className="py-20 md:py-28" style={{ background: "#fff" }}>
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <Eyebrow>What clients say</Eyebrow>
-        <SectionTitle>Local help, noticed by the people who use it.</SectionTitle>
+        <SectionTitle>On-the-ground help, noticed by the people who use it.</SectionTitle>
         <div className="mt-10 grid gap-4 md:grid-cols-3">
           {reviews.map(([quote, name]) => (
             <blockquote key={name} className="border p-6" style={{ borderColor: "#e4e8ed" }}>
@@ -566,7 +566,7 @@ function WhyEasyFind() {
       "Start with your requirement and get a practical next step.",
     ],
     [
-      "Local coordination",
+      "On-the-ground coordination",
       "We agree the scope, coordinate the next action, and share updates as agreed.",
     ],
     [
@@ -582,7 +582,7 @@ function WhyEasyFind() {
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <div className="max-w-2xl">
           <Eyebrow>Why EasyFind</Eyebrow>
-          <SectionTitle>Local support, clearly handled.</SectionTitle>
+          <SectionTitle>Property support, clearly handled.</SectionTitle>
           <p className="mt-5 leading-relaxed" style={{ color: MUTED }}>
             A straightforward starting point for people looking for a home and owners who need
             practical support on the ground.
@@ -633,7 +633,7 @@ function HowItWorks() {
             [
               "03",
               "Coordinate the next step",
-              "EasyFind keeps the local action moving and the follow-up clear.",
+              "EasyFind keeps the agreed action moving and the follow-up clear.",
             ],
           ].map(([n, t, b]) => (
             <div key={n} className="text-center">
@@ -664,7 +664,7 @@ function FAQ() {
       "No. We keep the website enquiry-led. Share your area, budget, preferences, or property need and we will guide the next conversation.",
     ],
     [
-      "Can owners who live away get local support?",
+      "Can owners who live away get property support from Bengaluru?",
       "Yes, where the requirement and responsibilities are agreed in advance. We coordinate the next action and share agreed updates.",
     ],
     [
@@ -842,7 +842,7 @@ function Contact() {
           >
             <div>
               <p className="text-xs font-semibold uppercase tracking-wider" style={{ color: GOLD }}>
-                Our local presence
+                Our Bengaluru presence
               </p>
               <h3 className="mt-1 font-serif text-2xl font-semibold" style={{ color: NAVY }}>
                 Find us in Bengaluru
@@ -919,7 +919,7 @@ function Footer() {
           </div>
           <div>
             <p className="text-xs font-semibold uppercase tracking-wider" style={{ color: GOLD }}>
-              Local support
+              Property support
             </p>
             <p className="mt-3 text-sm leading-7" style={{ color: MUTED }}>
               Practical property support across confirmed Bengaluru areas.{" "}
@@ -996,7 +996,7 @@ function Index() {
         <title>EasyFind Property Solutions | Your On-Ground Property Partner in Bengaluru</title>
         <meta
           name="description"
-          content="EasyFind helps people find homes in Bengaluru and helps property owners manage what matters—with local, clear, practical support."
+          content="EasyFind helps people find homes in Bengaluru and helps property owners manage what matters—with a clear point of contact and practical support."
         />
         <link rel="canonical" href="https://easyfindprops.com" />
       </Helmet>
