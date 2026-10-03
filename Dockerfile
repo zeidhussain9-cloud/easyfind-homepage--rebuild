@@ -23,5 +23,5 @@ ENV PORT=3000
 # Expose the default port
 EXPOSE 3000
 
-# Start the Express server which serves the client SPA and /api endpoints
+# Start the Express server which serves the client SPA
 CMD ["npm", "run", "start"]

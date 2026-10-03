@@ -30,10 +30,18 @@ The development server listens on port 5000.
 
 ## Routes
 
+### Website routes
+
 - `/` — EasyFind landing page and enquiry form
-- `/formatter` — internal property formatter
-- `/api/formatter/health` — formatter API health check
-- `/legal/privacy`, `/legal/terms`, `/legal/cookies` — legal pages
+- `/legal/privacy` — privacy policy
+- `/legal/terms` — terms of use
+- `/legal/cookies` — cookie policy
+- `/legal/legal-notice` — legal notice
+- `/legal/accessibility` — accessibility statement
+
+The homepage also provides in-page anchors for `#services`, `#how-it-works`,
+`#areas`, `#contact`, and the four service paths: `#find-a-property`,
+`#rent-out-my-property`, `#manage-my-property`, and `#prepare-and-care`.
 
 ## Production
 
@@ -42,13 +50,13 @@ npm run build
 npm run start
 ```
 
-The production server serves the built site and formatter API together.
+The production server serves the built website and its client-side routes.
 
 ## Configuration
 
-The main site uses the verified enquiry submission pipeline. Optional
-environment variables used by the formatter and deployment are documented in
-`.env.example` and `AGENTS.md`. Never commit secrets.
+Lead enquiries use the verified client-side submission pipeline. The optional
+`VITE_FORMSPREE_ID` variable is documented in `.env.example`. Never commit
+secrets.
 
 ## Website direction
 

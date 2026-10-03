@@ -2,7 +2,6 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { TanStackRouterVite } from "@tanstack/router-plugin/vite";
 import tailwindcss from "@tailwindcss/vite";
-import { formatterApiPlugin } from "./server/vite-formatter-plugin";
 import { cpSync, mkdirSync } from "node:fs";
 import { join } from "node:path";
 
@@ -22,7 +21,7 @@ function staticSpaRoutes() {
 }
 
 export default defineConfig({
-  plugins: [tailwindcss(), TanStackRouterVite(), react(), formatterApiPlugin(), staticSpaRoutes()],
+  plugins: [tailwindcss(), TanStackRouterVite(), react(), staticSpaRoutes()],
   resolve: {
     alias: {
       "@": "/src",
