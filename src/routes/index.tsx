@@ -16,8 +16,8 @@ import ContactForm from "../components/ContactForm";
 
 export const Route = createFileRoute("/")({ component: Index });
 
-const NAVY = "#17324f";
-const HERO = "#2D5B80";
+const NAVY = "#23435f";
+const HERO = NAVY;
 const GOLD = "#b89445";
 const CREAM = "#f7f5ef";
 const INK = "#223044";
