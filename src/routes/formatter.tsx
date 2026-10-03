@@ -122,7 +122,7 @@ function FormatterPage() {
               <Button
                 onClick={handleFormat}
                 disabled={isLoading || !input.trim()}
-                className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white"
+                className="flex items-center gap-2 bg-brand-navy hover:bg-brand-navy-deep text-white"
               >
                 {isLoading ? (
                   <Loader2 className="w-4 h-4 animate-spin" />
