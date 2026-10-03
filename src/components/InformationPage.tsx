@@ -41,6 +41,9 @@ export function InformationFooter() {
           </p>
         </div>
         <div className="flex flex-wrap gap-x-5 gap-y-2 text-xs text-[#23435f]">
+          <a href="/guides/property-management-bengaluru" className="underline underline-offset-2">
+            Property guides
+          </a>
           <a href="/legal/privacy" className="underline underline-offset-2">
             Privacy
           </a>
