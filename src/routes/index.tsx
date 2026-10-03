@@ -964,6 +964,20 @@ function Footer() {
           >
             Accessibility
           </a>
+          <a
+            href="/customer-protection"
+            className="underline underline-offset-2"
+            style={{ color: NAVY }}
+          >
+            Customer protection
+          </a>
+          <a
+            href="/guides/property-management-bellandur"
+            className="underline underline-offset-2"
+            style={{ color: NAVY }}
+          >
+            Property guides
+          </a>
         </nav>
       </div>
     </footer>

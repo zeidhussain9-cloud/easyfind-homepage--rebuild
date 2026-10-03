@@ -9,9 +9,16 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as CustomerProtectionRouteImport } from './routes/customer-protection'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as LegalSlugRouteImport } from './routes/legal.$slug'
+import { Route as GuidesPropertyManagementBellandurRouteImport } from './routes/guides.property-management-bellandur'
 
+const CustomerProtectionRoute = CustomerProtectionRouteImport.update({
+  id: '/customer-protection',
+  path: '/customer-protection',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -22,35 +29,69 @@ const LegalSlugRoute = LegalSlugRouteImport.update({
   path: '/legal/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const GuidesPropertyManagementBellandurRoute =
+  GuidesPropertyManagementBellandurRouteImport.update({
+    id: '/guides/property-management-bellandur',
+    path: '/guides/property-management-bellandur',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/customer-protection': typeof CustomerProtectionRoute
+  '/guides/property-management-bellandur': typeof GuidesPropertyManagementBellandurRoute
   '/legal/$slug': typeof LegalSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/customer-protection': typeof CustomerProtectionRoute
+  '/guides/property-management-bellandur': typeof GuidesPropertyManagementBellandurRoute
   '/legal/$slug': typeof LegalSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/customer-protection': typeof CustomerProtectionRoute
+  '/guides/property-management-bellandur': typeof GuidesPropertyManagementBellandurRoute
   '/legal/$slug': typeof LegalSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/legal/$slug'
+  fullPaths:
+    | '/'
+    | '/customer-protection'
+    | '/guides/property-management-bellandur'
+    | '/legal/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/legal/$slug'
-  id: '__root__' | '/' | '/legal/$slug'
+  to:
+    | '/'
+    | '/customer-protection'
+    | '/guides/property-management-bellandur'
+    | '/legal/$slug'
+  id:
+    | '__root__'
+    | '/'
+    | '/customer-protection'
+    | '/guides/property-management-bellandur'
+    | '/legal/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CustomerProtectionRoute: typeof CustomerProtectionRoute
+  GuidesPropertyManagementBellandurRoute: typeof GuidesPropertyManagementBellandurRoute
   LegalSlugRoute: typeof LegalSlugRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/customer-protection': {
+      id: '/customer-protection'
+      path: '/customer-protection'
+      fullPath: '/customer-protection'
+      preLoaderRoute: typeof CustomerProtectionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -65,11 +106,21 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LegalSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/guides/property-management-bellandur': {
+      id: '/guides/property-management-bellandur'
+      path: '/guides/property-management-bellandur'
+      fullPath: '/guides/property-management-bellandur'
+      preLoaderRoute: typeof GuidesPropertyManagementBellandurRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CustomerProtectionRoute: CustomerProtectionRoute,
+  GuidesPropertyManagementBellandurRoute:
+    GuidesPropertyManagementBellandurRoute,
   LegalSlugRoute: LegalSlugRoute,
 }
 export const routeTree = rootRouteImport

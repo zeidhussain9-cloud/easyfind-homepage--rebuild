@@ -5,14 +5,22 @@ import tailwindcss from "@tailwindcss/vite";
 import { cpSync, mkdirSync } from "node:fs";
 import { join } from "node:path";
 
-const legalRoutes = ["privacy", "terms", "cookies", "legal-notice", "accessibility"];
+const staticRoutes = [
+  "legal/privacy",
+  "legal/terms",
+  "legal/cookies",
+  "legal/legal-notice",
+  "legal/accessibility",
+  "customer-protection",
+  "guides/property-management-bellandur",
+];
 
 function staticSpaRoutes() {
   return {
     name: "static-spa-routes",
     closeBundle() {
-      for (const route of legalRoutes) {
-        const routeDir = join("dist", "legal", route);
+      for (const route of staticRoutes) {
+        const routeDir = join("dist", route);
         mkdirSync(routeDir, { recursive: true });
         cpSync(join("dist", "index.html"), join(routeDir, "index.html"));
       }
