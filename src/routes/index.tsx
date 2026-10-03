@@ -1,16 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Helmet } from "react-helmet-async";
-import {
-  ArrowRight,
-  Check,
-  ChevronDown,
-  Mail,
-  MapPin,
-  Menu,
-  MessageCircle,
-  Phone,
-  X,
-} from "lucide-react";
+import { ArrowRight, Check, Mail, MapPin, Menu, MessageCircle, Phone, X } from "lucide-react";
 import { useState, type ReactNode } from "react";
 import ContactForm from "../components/ContactForm";
 
@@ -25,25 +15,6 @@ const MUTED = "#667384";
 const WHATSAPP = "https://wa.me/919148338801";
 const CALL = "tel:+919148338801";
 const MAPS = "https://maps.app.goo.gl/aFny22T8D57v5dzK8?g_st=ac";
-
-const areas = [
-  "HSR Layout",
-  "Kudlu Gate",
-  "Bellandur",
-  "Sarjapur Road",
-  "Whitefield",
-  "Hoodi",
-  "Mahadevapura",
-  "Marathahalli",
-  "Kadubeesanahalli",
-  "ITPL",
-  "Varthur",
-  "Kasavanahalli",
-  "Harlur",
-  "Yemalur",
-  "Panathur",
-  "Koramangala",
-];
 
 const routes = [
   {
@@ -480,41 +451,41 @@ function Areas() {
   return (
     <section id="areas" className="py-20 md:py-28" style={{ background: NAVY }}>
       <div className="mx-auto max-w-7xl px-5 md:px-8">
-        <div className="max-w-2xl">
-          <Eyebrow light>Local where it matters</Eyebrow>
-          <SectionTitle light>Useful Bengaluru context, without the noise.</SectionTitle>
-          <p className="mt-5 leading-relaxed text-white/70">
-            EasyFind works across key residential and employment corridors in Bengaluru. Tell us
-            your preferred area, property need, and timeline—we’ll help you understand the right
-            next step.
-          </p>
+        <div className="grid items-start gap-12 md:grid-cols-[0.8fr_1.2fr] md:gap-16">
+          <div>
+            <Eyebrow light>Local where it matters</Eyebrow>
+            <SectionTitle light>Bengaluru areas, understood in context.</SectionTitle>
+            <p className="mt-5 leading-relaxed text-white/70">
+              EasyFind works across key residential and employment corridors in Bengaluru. Tell us
+              your preferred area, property need, and timeline—we’ll help you understand the right
+              next step.
+            </p>
+            <p className="mt-6 border-l border-[#b89445] pl-4 text-sm leading-relaxed text-white/60">
+              Coverage is focused on confirmed areas where commute, access, and property needs can
+              be discussed with useful context.
+            </p>
+          </div>
+          <div className="grid gap-4">
+            <div className="border border-white/15 bg-white/5 p-6 md:p-7">
+              <h3 className="font-serif text-xl text-white">Close to work</h3>
+              <p className="mt-3 text-sm leading-relaxed text-white/65">
+                Bellandur · Kadubeesanahalli · Marathahalli · Yemalur · Whitefield · Hoodi · ITPL
+              </p>
+            </div>
+            <div className="border border-white/15 bg-white/5 p-6 md:p-7">
+              <h3 className="font-serif text-xl text-white">The South-East choice</h3>
+              <p className="mt-3 text-sm leading-relaxed text-white/65">
+                HSR Layout · Kudlu Gate · Sarjapur Road · Kasavanahalli · Harlur · Varthur
+              </p>
+            </div>
+            <div className="border border-white/15 bg-white/5 p-6 md:p-7">
+              <h3 className="font-serif text-xl text-white">Connected Bengaluru</h3>
+              <p className="mt-3 text-sm leading-relaxed text-white/65">
+                Mahadevapura · Panathur · Koramangala
+              </p>
+            </div>
+          </div>
         </div>
-        <div className="mt-10 grid gap-4 md:grid-cols-3">
-          <div className="rounded-2xl border border-white/15 bg-white/5 p-6">
-            <h3 className="font-serif text-xl text-white">Close to work</h3>
-            <p className="mt-3 text-sm leading-relaxed text-white/65">
-              Bellandur · Kadubeesanahalli · Marathahalli · Yemalur · Whitefield · Hoodi · ITPL
-            </p>
-          </div>
-          <div className="rounded-2xl border border-white/15 bg-white/5 p-6">
-            <h3 className="font-serif text-xl text-white">The South-East choice</h3>
-            <p className="mt-3 text-sm leading-relaxed text-white/65">
-              HSR Layout · Kudlu Gate · Sarjapur Road · Kasavanahalli · Harlur · Varthur
-            </p>
-          </div>
-          <div className="rounded-2xl border border-white/15 bg-white/5 p-6">
-            <h3 className="font-serif text-xl text-white">Connected Bengaluru</h3>
-            <p className="mt-3 text-sm leading-relaxed text-white/65">
-              Mahadevapura · Panathur · Koramangala
-            </p>
-          </div>
-        </div>
-        <details className="mt-8 max-w-2xl text-white/70">
-          <summary className="flex cursor-pointer items-center gap-2 text-sm font-semibold text-white">
-            View all confirmed areas <ChevronDown size={16} />
-          </summary>
-          <p className="mt-4 leading-loose">{areas.join(" · ")}</p>
-        </details>
       </div>
     </section>
   );
