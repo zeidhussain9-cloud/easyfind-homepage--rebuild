@@ -15,29 +15,38 @@
  */
 const GATED_KEYWORDS = [
   // Generic society words
-  "apartment", "apartments",
-  "society", "societies",
+  "apartment",
+  "apartments",
+  "society",
+  "societies",
   "complex",
-  "residency", "residences", "residence",
+  "residency",
+  "residences",
+  "residence",
   "residential",
   // Common suffix words in Indian society names
   "heights",
-  "gardens", "garden",
-  "villas", "villa",
+  "gardens",
+  "garden",
+  "villas",
+  "villa",
   "enclave",
-  "estates", "estate",
+  "estates",
+  "estate",
   "habitat",
   "square",
   "park",
   "arcade",
-  "tower", "towers",
-  "terrace", "terraces",
+  "tower",
+  "towers",
+  "terrace",
+  "terraces",
   "meadows",
   "greens",
   "woods",
   "grove",
   "layout",
-  "nagar",          // planned colonies
+  "nagar", // planned colonies
   "county",
   "county",
   "avenue",
@@ -57,12 +66,7 @@ const GATED_KEYWORDS = [
 /**
  * Google Places `types` values that indicate a gated premise.
  */
-const GATED_PLACE_TYPES = [
-  "premise",
-  "neighborhood",
-  "sublocality_level_1",
-  "establishment",
-];
+const GATED_PLACE_TYPES = ["premise", "neighborhood", "sublocality_level_1", "establishment"];
 
 /**
  * Detects community type based on Google Places data.

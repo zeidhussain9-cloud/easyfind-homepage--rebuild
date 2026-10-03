@@ -81,7 +81,9 @@ function extractFurnishing(text: string): ParsedProperty["furnishing"] | undefin
 function extractSqft(text: string): string | undefined {
   // Use [^\S\r\n]* (horizontal whitespace only) so a number on the previous
   // line (e.g. maintenance: 2500) is never mistaken for sqft.
-  const match = text.match(/(\d{3,6})[^\S\r\n]*(?:sq\.?[^\S\r\n]?ft\.?|sqft|square[^\S\r\n]*feet|sft)\b/i);
+  const match = text.match(
+    /(\d{3,6})[^\S\r\n]*(?:sq\.?[^\S\r\n]?ft\.?|sqft|square[^\S\r\n]*feet|sft)\b/i,
+  );
   return match ? match[1] : undefined;
 }
 
@@ -89,7 +91,9 @@ function extractFloor(text: string): { floor?: string; floorTotal?: string } {
   // "floor" or common abbreviation "flr"
   const F = "(?:floor|flr)";
 
-  const withTotal = text.match(new RegExp(`(\\d+)(?:st|nd|rd|th)?\\s*${F}\\s*(?:\\/|of|out\\s*of)\\s*(\\d+)`, "i"));
+  const withTotal = text.match(
+    new RegExp(`(\\d+)(?:st|nd|rd|th)?\\s*${F}\\s*(?:\\/|of|out\\s*of)\\s*(\\d+)`, "i"),
+  );
   if (withTotal) return { floor: withTotal[1], floorTotal: withTotal[2] };
 
   const slashForm = text.match(new RegExp(`${F}\\s*[:\\-]?\\s*(\\d+)\\s*\\/\\s*(\\d+)`, "i"));

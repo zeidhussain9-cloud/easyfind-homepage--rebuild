@@ -16,9 +16,9 @@ import ContactForm from "../components/ContactForm";
 
 export const Route = createFileRoute("/")({ component: Index });
 
-const NAVY = "#23435f";
+export const NAVY = "#23435f";
 const HERO = NAVY;
-const GOLD = "#b89445";
+export const GOLD = "#b89445";
 const CREAM = "#f7f5ef";
 const INK = "#223044";
 const MUTED = "#667384";
@@ -86,13 +86,33 @@ const routes = [
     text: "A local point of coordination for owners in Bengaluru, elsewhere in India, or abroad—with agreed updates.",
     id: "manage-my-property",
     eyebrow: "For owners in Bengaluru, India, and abroad",
-    heading: "Local property management, even when you are not nearby.",
+    heading: "A Bengaluru-based property partner for owners near and far.",
     detail:
       "Whether you live in Bengaluru, elsewhere in India, or abroad, we help coordinate the day-to-day property actions that are difficult to handle from a distance. That can include tenant or occupant coordination, inspections, maintenance follow-up, vacancy readiness, and agreed updates.",
     points: [
       "Tenant, occupant, inspection, and access coordination",
       "Maintenance and issue follow-up with local professionals",
       "Agreed updates, records, and clear closure",
+    ],
+    subsections: [
+      {
+        title: "For owners in Bengaluru and elsewhere in India",
+        text: "Stay close to the property without having to chase every local detail.",
+        points: [
+          "Tenant or occupant coordination, visits, and inspections",
+          "Maintenance requests, vendor follow-up, and work checks",
+          "Vacancy, handover, readiness, and agreed progress updates",
+        ],
+      },
+      {
+        title: "For NRI owners and owners living abroad",
+        text: "A dependable Bengaluru point of contact across distance and time zones.",
+        points: [
+          "Local checks, access, repairs, and urgent issue coordination",
+          "Photo and update-led visibility before and after agreed work",
+          "A clear responsibility, scope, and escalation path",
+        ],
+      },
     ],
     cta: "Discuss property management",
     note: "The exact responsibilities, response expectations, and vendor scope are agreed with you first.",
@@ -103,13 +123,39 @@ const routes = [
     text: "Coordinate cleaning, painting, pest control, repairs, inspections, documentation support, and other property needs.",
     id: "prepare-and-care",
     eyebrow: "For properties that need practical care",
-    heading: "From cleaning and pest control to repairs and readiness.",
+    heading: "Property care, coordinated from one clear local plan.",
     detail:
       "For a move-in, handover, sale, tenant change, or simply a property that needs attention, we coordinate the agreed work: cleaning, painting, pest control, repairs, inspections, documentation support, utility or access follow-up, and other practical requirements.",
     points: [
       "Cleaning, painting, pest control, repairs, and inspections",
       "Documentation, access, utility, and readiness support",
       "Coordination with suitable professionals and agreed updates",
+    ],
+    categories: [
+      {
+        title: "Clean and reset",
+        text: "Deep cleaning, kitchen and bathroom attention, waste removal, and move-in readiness.",
+      },
+      {
+        title: "Repair and restore",
+        text: "Plumbing, electrical, carpentry, fixtures, appliances, doors, locks, and general repairs.",
+      },
+      {
+        title: "Refresh and improve",
+        text: "Painting, touch-ups, wall preparation, polishing, and presentation work.",
+      },
+      {
+        title: "Protect and inspect",
+        text: "Pest control, dampness or leakage checks, inspection visits, and preventive follow-up.",
+      },
+      {
+        title: "Document and make ready",
+        text: "Condition notes, photos, inventory or readiness checks, access, utilities, and documentation support.",
+      },
+      {
+        title: "Coordinate to closure",
+        text: "Suitable professionals, agreed scope, progress visibility, issue escalation, and handover confirmation.",
+      },
     ],
     cta: "Plan property care",
     note: "EasyFind coordinates the agreed local work and keeps the scope, progress, and next action visible.",
@@ -336,6 +382,54 @@ function ServiceRoute({ route, index }: { route: (typeof routes)[number]; index:
           <p className="mt-6 max-w-xl text-base leading-relaxed" style={{ color: MUTED }}>
             {route.detail}
           </p>
+          {route.subsections && (
+            <div className="mt-8 space-y-4">
+              {route.subsections.map((subsection) => (
+                <div
+                  key={subsection.title}
+                  className="rounded-xl border bg-white/65 p-5"
+                  style={{ borderColor: "#e4e8ed" }}
+                >
+                  <h3 className="text-base font-semibold" style={{ color: NAVY }}>
+                    {subsection.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed" style={{ color: MUTED }}>
+                    {subsection.text}
+                  </p>
+                  <ul className="mt-3 space-y-2">
+                    {subsection.points.map((point) => (
+                      <li
+                        key={point}
+                        className="flex items-start gap-2 text-sm leading-relaxed"
+                        style={{ color: INK }}
+                      >
+                        <Check className="mt-0.5 shrink-0" size={16} style={{ color: GOLD }} />
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          )}
+          {route.categories && (
+            <div className="mt-8 grid gap-3 sm:grid-cols-2">
+              {route.categories.map((category) => (
+                <div
+                  key={category.title}
+                  className="rounded-xl border bg-white/65 p-4"
+                  style={{ borderColor: "#e4e8ed" }}
+                >
+                  <h3 className="text-sm font-semibold" style={{ color: NAVY }}>
+                    {category.title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed" style={{ color: MUTED }}>
+                    {category.text}
+                  </p>
+                </div>
+              ))}
+            </div>
+          )}
           <button
             onClick={() => scrollTo("#contact")}
             className="mt-8 rounded-full px-6 py-3.5 font-semibold"
