@@ -273,9 +273,7 @@ export async function resolveGoogleMapsLocation(
     // Step 1: resolve short URLs to their canonical long form
     let url = googleMapsUrl;
     const isShort =
-      url.includes("maps.app.goo.gl") ||
-      url.includes("goo.gl/maps") ||
-      url.includes("goo.gl/");
+      url.includes("maps.app.goo.gl") || url.includes("goo.gl/maps") || url.includes("goo.gl/");
     if (isShort) {
       url = await resolveShortUrl(url);
     }
@@ -310,10 +308,7 @@ export async function resolveGoogleMapsLocation(
 
     return FALLBACK;
   } catch (error) {
-    console.error(
-      "Google Places Error:",
-      error instanceof Error ? error.message : String(error),
-    );
+    console.error("Google Places Error:", error instanceof Error ? error.message : String(error));
     return FALLBACK;
   }
 }
@@ -327,10 +322,26 @@ export async function detectSociety(
   _placeType: string,
 ): Promise<{ isSociety: boolean; societyName?: string }> {
   const indicators = [
-    "apartment", "society", "complex", "residency", "heights",
-    "gardens", "villas", "habitat", "enclave", "estates",
-    "square", "park", "arcade", "tower", "terrace",
-    "meadows", "greens", "woods", "grove", "layout",
+    "apartment",
+    "society",
+    "complex",
+    "residency",
+    "heights",
+    "gardens",
+    "villas",
+    "habitat",
+    "enclave",
+    "estates",
+    "square",
+    "park",
+    "arcade",
+    "tower",
+    "terrace",
+    "meadows",
+    "greens",
+    "woods",
+    "grove",
+    "layout",
   ];
   const isSociety = indicators.some((kw) => placeName.toLowerCase().includes(kw));
   return { isSociety, societyName: isSociety ? placeName : undefined };

@@ -1,31 +1,39 @@
 # EasyFind Property Solutions
 
-EasyFind Property Solutions is a property services website for Bangalore covering rentals, property sales, property management, NRI assistance, and investment advisory.
+The EasyFind Property Solutions website is the public, enquiry-led site for
+finding a property and getting practical local support for property owners in
+Bengaluru. It does not publish live property listings.
 
-The project also includes an internal property formatter at `/formatter` for turning raw listing details, WhatsApp messages, and Google Maps links into a standardized listing format.
+## Verified production setup
 
-**Live app**: Not published yet. Use the Replit Preview while developing.
+- **Repository:** `zeidhussain9-cloud/efps-live-website`
+- **Default branch:** `main`
+- **Render service:** `srv-d98o56btqb8s739ek100` (`Easyfindprops`)
+- **Render dashboard:** <https://dashboard.render.com/static/srv-d98o56btqb8s739ek100>
+- **Primary public domain:** <https://easyfindprops.com>
+- **Render service URL:** <https://easyfindprops.onrender.com>
+- **Deployment:** Render auto-deploys the `main` branch on commit.
 
-## Development
+The Render URL is the platform-generated alias for the same service; it is not
+a separate deployment. The custom domain is the customer-facing URL.
 
-You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+## Local development
+
+Install Node.js and npm, then run:
 
 ```sh
 npm install
 npm run dev
 ```
 
-The development server listens on port 5000 and includes the formatter API.
+The development server listens on port 5000.
 
-## Available routes
+## Routes
 
-- `/` — EasyFind landing page and contact form
-- `/formatter` — Internal property formatter
-- `/api/formatter/health` — Formatter API health check
-
-## Optional configuration
-
-Add `GOOGLE_PLACES_API_KEY` as an environment variable to enable location resolution from Google Maps URLs. The main site and deterministic formatter work without additional secrets.
+- `/` — EasyFind landing page and enquiry form
+- `/formatter` — internal property formatter
+- `/api/formatter/health` — formatter API health check
+- `/legal/privacy`, `/legal/terms`, `/legal/cookies` — legal pages
 
 ## Production
 
@@ -35,3 +43,22 @@ npm run start
 ```
 
 The production server serves the built site and formatter API together.
+
+## Configuration
+
+The main site uses the verified enquiry submission pipeline. Optional
+environment variables used by the formatter and deployment are documented in
+`.env.example` and `AGENTS.md`. Never commit secrets.
+
+## Website direction
+
+EasyFind is positioned as an on-ground property partner: practical, local,
+clear, and trustworthy. The four service routes are:
+
+1. Find a property — for people looking to rent or purchase.
+2. Rent out or sell my property — for owners preparing either route.
+3. Manage my property — for owners in Bengaluru, elsewhere in India, and
+   abroad, including NRI owners.
+4. Prepare and care for my property — coordinated property readiness and care.
+
+The homepage should remain enquiry-led and should not become a listing portal.

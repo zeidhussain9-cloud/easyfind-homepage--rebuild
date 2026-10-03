@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { Helmet } from "react-helmet-async";
 
 const pages = {
@@ -121,8 +121,8 @@ function LegalPage() {
       </Helmet>
       <header className="border-b border-[#e4e8ed] bg-white">
         <div className="mx-auto flex max-w-5xl items-center justify-between px-5 py-5 md:px-8">
-          <Link
-            to="/#contact"
+          <a
+            href="/#contact"
             className="flex items-center gap-3 text-sm font-semibold text-[#23435f]"
           >
             <img
@@ -131,13 +131,13 @@ function LegalPage() {
               className="h-9 w-auto"
             />
             EasyFind Property Solutions
-          </Link>
-          <Link
-            to="/#contact"
+          </a>
+          <a
+            href="/#contact"
             className="text-sm font-semibold text-[#23435f] underline underline-offset-4"
           >
             Back to contact section
-          </Link>
+          </a>
         </div>
       </header>
       <main className="mx-auto max-w-3xl px-5 py-14 md:px-8 md:py-20">

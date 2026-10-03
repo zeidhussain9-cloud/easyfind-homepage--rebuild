@@ -22,13 +22,7 @@ function staticSpaRoutes() {
 }
 
 export default defineConfig({
-  plugins: [
-    tailwindcss(),
-    TanStackRouterVite(),
-    react(),
-    formatterApiPlugin(),
-    staticSpaRoutes(),
-  ],
+  plugins: [tailwindcss(), TanStackRouterVite(), react(), formatterApiPlugin(), staticSpaRoutes()],
   resolve: {
     alias: {
       "@": "/src",
