@@ -3,7 +3,7 @@
   "configVersion": 0,
   "workspaces": {
     "": {
-      "name": "tanstack_start_ts",
+      "name": "efps-live-website",
       "dependencies": {
         "@hookform/resolvers": "^5.2.2",
         "@radix-ui/react-label": "^2.1.8",

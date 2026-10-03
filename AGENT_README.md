@@ -36,9 +36,8 @@ proof, how it works, FAQs, and contact.
 - Frontend: React, TanStack Router, Vite, TypeScript, and Tailwind.
 - Production build: `npm run build`.
 - Development: `npm run dev` on port 5000.
-- Production server: `npm run start`.
+- Production server: `npm run start` serves the built SPA with Express.
 - Lead delivery must remain inside the existing verified form pipeline.
-- Formatter API code is separate from the public landing-page content.
 - Do not commit secrets or modify deployment credentials.
 
 ## Maintenance checklist

@@ -10,7 +10,7 @@
  *   1. Create a free account at https://formspree.io
  *   2. Create a form named "EasyFind Lead Form"
  *   3. Copy the 8-character Form ID (e.g. xpwzabcd)
- *   4. In Render dashboard → easyfind-website → Environment:
+ *   4. In Render dashboard → Easyfindprops → Environment:
  *      Add key: VITE_FORMSPREE_ID  value: your_form_id
  *   5. Trigger a new deploy
  *   6. Test: submit hero form → confirm email arrives in inbox
