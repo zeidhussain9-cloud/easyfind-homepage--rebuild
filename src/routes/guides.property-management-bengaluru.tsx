@@ -55,42 +55,42 @@ function PropertyManagementGuide() {
               Bengaluru property guide · 8 min read
             </p>
             <h1 className="mt-5 max-w-3xl font-serif text-4xl font-semibold leading-[1.04] md:text-6xl">
-              Your Bengaluru property should not go quiet when you leave.
+              Property management in Bengaluru: what an owner should agree before appointing help.
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-relaxed text-[#e2eaee] md:text-lg">
-              A plain-English guide to the local work that keeps an owner informed: people, access,
-              repairs, handover, and the small decisions that otherwise become big surprises.
+              A practical guide for owners who need someone local to coordinate access, tenants,
+              repairs, and handover—especially when they live elsewhere.
             </p>
             <a
               href="#the-easyfind-way"
               className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-white underline decoration-[#e3c976] decoration-2 underline-offset-8"
             >
-              See the EasyFind way <ArrowRight size={16} />
+              See what the work includes <ArrowRight size={16} />
             </a>
           </div>
           <div className="relative rounded-2xl border border-white/15 bg-white/[0.08] p-6 md:p-8">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#e3c976]">
-              The honest answer
+              Before you appoint anyone
             </p>
             <p className="mt-4 font-serif text-2xl leading-snug text-white md:text-3xl">
-              “Don&apos;t worry, we&apos;ll handle it” is not a process.
+              Agree these five things first.
             </p>
             <p className="mt-4 text-sm leading-relaxed text-[#d4e0e5]">
-              Before anyone starts, you should know what they will do, what they need you to
-              approve, what they will record, and when you will hear back.
+              Who communicates? Who gets access? Who approves a repair? What gets recorded? When
+              will you receive an update?
             </p>
             <div className="mt-7 grid grid-cols-3 gap-3 border-t border-white/15 pt-5 text-center text-xs text-[#d4e0e5]">
               <div>
                 <p className="font-serif text-2xl text-[#e3c976]">01</p>
-                <p className="mt-1">See what changed</p>
+                <p className="mt-1">What was found</p>
               </div>
               <div>
                 <p className="font-serif text-2xl text-[#e3c976]">02</p>
-                <p className="mt-1">Decide clearly</p>
+                <p className="mt-1">What needs approval</p>
               </div>
               <div>
                 <p className="font-serif text-2xl text-[#e3c976]">03</p>
-                <p className="mt-1">Close the loop</p>
+                <p className="mt-1">What is complete</p>
               </div>
             </div>
           </div>
@@ -101,26 +101,26 @@ function PropertyManagementGuide() {
         <div className="grid gap-12 lg:grid-cols-[1.08fr_.92fr] lg:items-start">
           <article className="space-y-16">
             <section className="grid gap-4 border-y border-[#dfe4e7] py-5 text-sm sm:grid-cols-3">
-              <QuickFact label="For" text="Bengaluru, India-based, and NRI owners" />
-              <QuickFact label="The problem" text="A property is local. Your life may not be." />
-              <QuickFact label="Next step" text="Discuss property management" />
+              <QuickFact label="This guide is for" text="Bengaluru, India-based, and NRI owners" />
+              <QuickFact label="It covers" text="Access, people, repairs, handover, and updates" />
+              <QuickFact label="If you need help" text="Discuss your property with EasyFind" />
             </section>
 
             <section>
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#b89445]">
-                Start here
+                The owner’s question
               </p>
               <h2 className="mt-3 max-w-2xl font-serif text-3xl font-semibold leading-tight text-[#23435f] md:text-4xl">
-                Property management is not one big task. It is a chain of small local moments.
+                What exactly needs to happen at the property—and who will do it?
               </h2>
               <p className="mt-5 max-w-2xl leading-relaxed text-[#667384]">
-                A message from a tenant. A key that needs collecting. A repair that needs a quote. A
-                visit that needs arranging. A vacant home that needs checking before the next person
-                walks in. If nobody owns the chain, the owner ends up chasing every link.
+                A tenant message needs a response. A visitor needs access. A repair needs a quote
+                and approval. A vacant home needs checking before the next handover. These are
+                separate jobs, and a useful property-management brief names each one.
               </p>
               <p className="mt-4 max-w-2xl leading-relaxed text-[#667384]">
-                The right support gives those moments a home: an agreed scope, a named next step,
-                and an update you can understand without being in Bengaluru.
+                That is what you should be able to see before you appoint support: the agreed scope,
+                the person responsible for the next step, and the update you will receive.
               </p>
             </section>
 
@@ -129,43 +129,44 @@ function PropertyManagementGuide() {
                 <ShieldCheck className="mt-1 shrink-0 text-[#b89445]" size={23} />
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#b89445]">
-                    The EasyFind way
+                    What EasyFind can coordinate
                   </p>
                   <h2 className="mt-3 font-serif text-3xl font-semibold leading-tight text-[#23435f]">
-                    Local eyes. Agreed action. Clear proof.
+                    A written brief, local follow-up, and an owner update.
                   </h2>
                   <p className="mt-4 leading-relaxed text-[#667384]">
-                    EasyFind Property Solutions is built around a simple owner promise: your
-                    Bengaluru property looked after locally, with clear updates while you are away.
-                    We first understand the property and the job. Then we coordinate only the work
-                    that is agreed, keep decisions visible, and close with what was checked or
-                    completed.
+                    EasyFind Property Solutions helps owners define the property need, coordinate
+                    the agreed local work, and receive a clear update. We do not take over every
+                    decision. We make the responsibility, approval point, and next action visible.
                   </p>
                 </div>
               </div>
               <div className="mt-8 grid gap-6 border-t border-[#e4e8ed] pt-7 sm:grid-cols-3">
                 <ProcessStep
                   number="01"
-                  title="Understand"
-                  text="Property, people, access, and what you need watched."
+                  title="Write the brief"
+                  text="Property, people, access, and the work you want coordinated."
                 />
                 <ProcessStep
                   number="02"
-                  title="Coordinate"
+                  title="Do the agreed work"
                   text="Visits, vendors, repairs, and handover steps within scope."
                 />
                 <ProcessStep
                   number="03"
-                  title="Update"
-                  text="What happened, what is pending, and what needs your call."
+                  title="Report back"
+                  text="What was found, what is complete, and what needs your decision."
                 />
               </div>
             </section>
 
-            <GuideSection number="01" title="What can local support actually look after?">
+            <GuideSection
+              number="01"
+              title="What should a Bengaluru property-management brief include?"
+            >
               <p>
-                Start with the work that is real and repeatable. The list below is not an unlimited
-                promise; it is a useful way to write the brief for one property.
+                Start with the work that is real and repeatable. Use these headings to write the
+                brief for one property; do not assume that every provider includes all of them.
               </p>
               <div className="mt-7 grid gap-3 sm:grid-cols-2">
                 <WorkCard
@@ -187,10 +188,13 @@ function PropertyManagementGuide() {
               </div>
             </GuideSection>
 
-            <GuideSection number="02" title="Four conversations to have before you appoint anyone">
+            <GuideSection
+              number="02"
+              title="Ask these four questions before you appoint a property manager"
+            >
               <p>
-                Good support becomes easier to trust when the awkward questions are answered early.
-                Ask for plain answers, not a wider promise.
+                Ask for plain answers before you pay or hand over access. The answers should fit
+                your property, not a generic package.
               </p>
               <div className="mt-7 space-y-7">
                 <GuideQuestion number="A" title="Who speaks to the tenant or occupant?">
@@ -212,11 +216,14 @@ function PropertyManagementGuide() {
               </div>
             </GuideSection>
 
-            <GuideSection number="03" title="If your home is in Bengaluru but you are not">
+            <GuideSection
+              number="03"
+              title="Owners outside Bengaluru: agree the update and approval rules first"
+            >
               <p>
-                Distance is not the only problem. Unclear authority is. Before work starts, decide
-                what can move without asking you, what needs approval, and how quickly you need to
-                hear about a problem.
+                Before work starts, decide what can move without asking you, what needs approval,
+                and how quickly you need to hear about a problem. This matters whether you live in
+                another Indian city or abroad.
               </p>
               <div className="mt-7 grid gap-3 sm:grid-cols-2">
                 <ChecklistCard
@@ -268,11 +275,14 @@ function PropertyManagementGuide() {
               </div>
             </GuideSection>
 
-            <GuideSection number="05" title="What EasyFind will—and will not—promise">
+            <GuideSection
+              number="05"
+              title="What EasyFind can take on—and what stays with the owner"
+            >
               <p>
-                Trust is easier to build when the boundary is visible. EasyFind can discuss a
-                practical brief and agreed local coordination. That does not mean taking ownership
-                of every decision or guaranteeing an outcome outside our control.
+                EasyFind can discuss a practical brief and agreed local coordination. The owner
+                still approves the decisions reserved for them, and no provider can guarantee an
+                outcome outside its control.
               </p>
               <div className="mt-7 grid gap-4 md:grid-cols-2">
                 <BoundaryCard
@@ -304,11 +314,10 @@ function PropertyManagementGuide() {
                 Your appointment check
               </p>
               <h2 className="mt-4 font-serif text-3xl font-semibold leading-tight">
-                Before you hand over the keys
+                Before you appoint a property manager
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-[#d4e0e5]">
-                Put these five answers in writing. If the answer is vague now, it will be harder to
-                rely on later.
+                Put these five answers in writing before you pay or provide access.
               </p>
               <div className="mt-7 space-y-4">
                 {[

@@ -418,6 +418,15 @@ function ServiceRoute({ route, index }: { route: (typeof routes)[number]; index:
           >
             {route.cta} <ArrowRight className="ml-2 inline" size={17} />
           </button>
+          {route.id === "manage-my-property" && (
+            <a
+              href="/guides/property-management-bengaluru"
+              className="ml-4 inline-flex items-center gap-2 text-sm font-semibold underline underline-offset-4"
+              style={{ color: NAVY }}
+            >
+              Read the owner guide <ArrowRight size={15} />
+            </a>
+          )}
         </div>
         <div
           className="rounded-2xl border p-7 shadow-sm md:p-9"
@@ -976,7 +985,7 @@ function Footer() {
             className="underline underline-offset-2"
             style={{ color: NAVY }}
           >
-            Property guides
+            Property management guide
           </a>
         </nav>
       </div>
