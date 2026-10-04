@@ -55,11 +55,11 @@ function PropertyManagementGuide() {
               Bengaluru property guide · 8 min read
             </p>
             <h1 className="mt-5 max-w-3xl font-serif text-4xl font-semibold leading-[1.04] md:text-6xl">
-              Property management in Bengaluru: what an owner should agree before appointing help.
+              Before you hand over your Bengaluru property: a practical owner&apos;s guide.
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-relaxed text-[#e2eaee] md:text-lg">
               A practical guide for owners who need someone local to coordinate access, tenants,
-              repairs, and handover—especially when they live elsewhere.
+              repairs, and handover, especially when they live elsewhere.
             </p>
             <a
               href="#the-easyfind-way"
@@ -73,7 +73,7 @@ function PropertyManagementGuide() {
               Before you appoint anyone
             </p>
             <p className="mt-4 font-serif text-2xl leading-snug text-white md:text-3xl">
-              Agree these five things first.
+              Make the basics clear before the work starts.
             </p>
             <p className="mt-4 text-sm leading-relaxed text-[#d4e0e5]">
               Who communicates? Who gets access? Who approves a repair? What gets recorded? When
@@ -111,7 +111,7 @@ function PropertyManagementGuide() {
                 The owner’s question
               </p>
               <h2 className="mt-3 max-w-2xl font-serif text-3xl font-semibold leading-tight text-[#23435f] md:text-4xl">
-                What exactly needs to happen at the property—and who will do it?
+                What work needs doing, and who is responsible for each step?
               </h2>
               <p className="mt-5 max-w-2xl leading-relaxed text-[#667384]">
                 A tenant message needs a response. A visitor needs access. A repair needs a quote
@@ -247,7 +247,7 @@ function PropertyManagementGuide() {
               </div>
               <p className="mt-5 text-sm leading-relaxed text-[#667384]">
                 For owners elsewhere in India or abroad, the exact scope, response rhythm, and
-                records should be agreed for the property—not assumed from a package name.
+                records should be agreed for the property, not assumed from a package name.
               </p>
             </GuideSection>
 
@@ -277,7 +277,7 @@ function PropertyManagementGuide() {
 
             <GuideSection
               number="05"
-              title="What EasyFind can take on—and what stays with the owner"
+              title="What EasyFind can take on, and what stays with the owner"
             >
               <p>
                 EasyFind can discuss a practical brief and agreed local coordination. The owner
@@ -321,7 +321,7 @@ function PropertyManagementGuide() {
               </p>
               <div className="mt-7 space-y-4">
                 {[
-                  "What exactly is included—and excluded?",
+                  "What exactly is included, and what is not?",
                   "Who can approve spending and vendor work?",
                   "What will I receive after a visit or repair?",
                   "How does an urgent issue reach me?",
